@@ -108,3 +108,18 @@ END //
 DELIMITER ;
 
 CALL get_all_users();
+DROP PROCEDURE get_user_by_id;
+
+DELIMITER //
+CREATE PROCEDURE get_user_by_id(IN userId INT)
+BEGIN
+  SELECT * FROM USER WHERE id = id;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE get_user_by_email(IN userEmail VARCHAR(255))
+BEGIN
+  SELECT * FROM USER WHERE email = userEmail;
+END //
+DELIMITER ;

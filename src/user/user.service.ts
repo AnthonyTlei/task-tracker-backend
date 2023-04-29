@@ -14,4 +14,18 @@ export class UserService {
     const response = await this.usersRepository.query('CALL get_all_users()');
     return response[0];
   }
+
+  async getUserById(id: number): Promise<User[]> {
+    const response = await this.usersRepository.query(
+      `CALL get_user_by_id(${id})`,
+    );
+    return response[0];
+  }
+
+  async getUserByEmail(email: string): Promise<User[]> {
+    const response = await this.usersRepository.query(
+      `CALL get_user_by_email("${email}")`,
+    );
+    return response[0];
+  }
 }
