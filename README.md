@@ -71,3 +71,40 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Setup docker container
+
+docker run --name task-tracker-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql
+docker ps
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' task-tracker-db
+docker exec -it task-tracker-db mysql -u root -p
+
+CREATE DATABASE dev;
+SHOW DATABASES;
+USE dev;
+
+CREATE TABLE USER (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    role ENUM('user', 'admin') NOT NULL
+);
+
+SHOW TABLES;
+
+INSERT INTO USER (first_name, last_name, password, email, role)
+VALUES ('Test', 'User', 'password123', 'testuser@example.com', 'user');
+
+SELECT * FROM USER;
+
+DELIMITER //
+CREATE PROCEDURE get_all_users()
+BEGIN
+    SELECT * FROM USER;
+END //
+DELIMITER ;
+
+CALL get_all_users();
