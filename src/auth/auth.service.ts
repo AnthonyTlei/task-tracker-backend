@@ -37,7 +37,7 @@ export class AuthService {
       user.password,
     );
     if (!doesPasswordMatch) return null;
-    return this.userService._convertUserToDetails(user);
+    return this.userService._convertUserToUserDetails(user);
   }
 
   async login(
@@ -69,7 +69,7 @@ export class AuthService {
     );
     const users = await this.userService._getUserByEmail(email);
     const newUser = users[0];
-    return this.userService._convertUserToDetails(newUser);
+    return this.userService._convertUserToUserDetails(newUser);
   }
 
   async verifyJwt(jwt: string): Promise<{ exp: number }> {

@@ -20,14 +20,14 @@ export class UserController {
   @UseGuards(JwtGuard, RolesGuard)
   @Get(':id')
   @Roles(UserRole.ADMIN, UserRole.SUPERADMIN)
-  async getUser(@Param('id') id: number): Promise<UserDetails[]> {
+  async getUser(@Param('id') id: number): Promise<UserDetails> {
     return await this.userService.getUserDetailsById(id);
   }
 
   @UseGuards(JwtGuard, RolesGuard)
   @Post()
   @Roles(UserRole.ADMIN, UserRole.SUPERADMIN)
-  async getUserByEmail(@Body('email') email: string): Promise<UserDetails[]> {
+  async getUserByEmail(@Body('email') email: string): Promise<UserDetails> {
     return this.userService.getUserDetailsByEmail(email);
   }
 }

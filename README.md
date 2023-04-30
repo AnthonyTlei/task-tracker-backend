@@ -108,7 +108,7 @@ DROP PROCEDURE get_user_by_id;
 DELIMITER //
 CREATE PROCEDURE get_user_by_id(IN userId INT)
 BEGIN
-  SELECT * FROM USER WHERE id = id;
+  SELECT * FROM USER WHERE id = userId;
 END //
 DELIMITER ;
 

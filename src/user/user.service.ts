@@ -12,7 +12,7 @@ export class UserService {
   ) {}
 
   /* These Methods should not be directly called by controllers. */
-  _convertUserToDetails(user: User): UserDetails {
+  _convertUserToUserDetails(user: User): UserDetails {
     return {
       id: user.id,
       first_name: user.first_name,
@@ -20,6 +20,14 @@ export class UserService {
       email: user.email,
       role: user.role,
     };
+  }
+
+  _convertUsersToUsersDetails(users: User[]): UserDetails[] {
+    const trimmedUsers: UserDetails[] = [];
+    for (const user of users) {
+      trimmedUsers.push(this._convertUserToUserDetails(user));
+    }
+    return trimmedUsers;
   }
 
   async _getUsers(): Promise<User[]> {
@@ -54,22 +62,28 @@ export class UserService {
   }
 
   /* These Methods can be directly called by controllers. */
-  async getUsersDetails(): Promise<UserDetails[]> {
+  async getUsersDetails(): Promise<UserDetails[] | null> {
     const response = await this.usersRepository.query('CALL get_all_users()');
-    return response;
+    if (response[0].length == 0) return null;
+    const users = this._convertUsersToUsersDetails(response[0]);
+    return users;
   }
 
-  async getUserDetailsByEmail(email: string): Promise<User[]> {
+  async getUserDetailsByEmail(email: string): Promise<UserDetails | null> {
     const response = await this.usersRepository.query(
       `CALL get_user_by_email("${email}")`,
     );
-    return response[0];
+    if (response[0].length == 0) return null;
+    const user = this._convertUserToUserDetails(response[0][0]);
+    return user;
   }
 
-  async getUserDetailsById(id: number): Promise<User[]> {
+  async getUserDetailsById(id: number): Promise<UserDetails | null> {
     const response = await this.usersRepository.query(
       `CALL get_user_by_id(${id})`,
     );
-    return response[0];
+    if (response[0].length == 0) return null;
+    const user = this._convertUserToUserDetails(response[0][0]);
+    return user;
   }
 }
