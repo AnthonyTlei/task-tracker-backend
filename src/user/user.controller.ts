@@ -1,6 +1,9 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
-import { User } from './user.entity';
+import { User, UserRole } from './user.entity';
+import { RolesGuard } from 'src/common/guards/roles.guard';
+import { Roles } from 'src/common/decorators/roles.decorator';
+import { JwtGuard } from 'src/auth/guards/jwt.guard';
 
 @Controller('users')
 export class UserController {
@@ -16,7 +19,9 @@ export class UserController {
     return await this.userService.getUserById(id);
   }
 
+  @UseGuards(JwtGuard, RolesGuard)
   @Post()
+  @Roles(UserRole.ADMIN)
   async getUserByEmail(@Body('email') email: string): Promise<User[]> {
     return this.userService.getUserByEmail(email);
   }
