@@ -28,7 +28,7 @@ export class AuthService {
     email: string,
     password: string,
   ): Promise<UserDetails | null> {
-    const users = await this.userService.getUserByEmail(email);
+    const users = await this.userService._getUserByEmail(email);
     const user = users[0];
     const doesUserExist = !!user;
     if (!doesUserExist) return null;
@@ -37,7 +37,7 @@ export class AuthService {
       user.password,
     );
     if (!doesPasswordMatch) return null;
-    return this.userService._getUserDetails(user);
+    return this.userService._convertUserToDetails(user);
   }
 
   async login(
@@ -53,7 +53,7 @@ export class AuthService {
 
   async register(user: Readonly<NewUserDTO>): Promise<UserDetails | any> {
     const { first_name, last_name, email, password } = user;
-    const existingUsers = await this.userService.getUserByEmail(email);
+    const existingUsers = await this.userService._getUserByEmail(email);
     const existingUser = existingUsers[0];
     if (existingUser)
       throw new HttpException(
@@ -61,10 +61,15 @@ export class AuthService {
         HttpStatus.CONFLICT,
       );
     const hashedPassword = await this.hashPassword(password);
-    await this.userService.create(first_name, last_name, email, hashedPassword);
-    const users = await this.userService.getUserByEmail(email);
+    await this.userService._create(
+      first_name,
+      last_name,
+      email,
+      hashedPassword,
+    );
+    const users = await this.userService._getUserByEmail(email);
     const newUser = users[0];
-    return this.userService._getUserDetails(newUser);
+    return this.userService._convertUserToDetails(newUser);
   }
 
   async verifyJwt(jwt: string): Promise<{ exp: number }> {

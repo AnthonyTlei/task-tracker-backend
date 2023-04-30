@@ -90,15 +90,10 @@ CREATE TABLE USER (
     last_name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    role ENUM('user', 'admin') NOT NULL
+    role ENUM('user', 'admin', 'superadmin') NOT NULL
 );
 
 SHOW TABLES;
-
-INSERT INTO USER (first_name, last_name, password, email, role)
-VALUES ('Test', 'User', 'password123', 'testuser@example.com', 'user');
-
-SELECT * FROM USER;
 
 DELIMITER //
 CREATE PROCEDURE get_all_users()
@@ -138,3 +133,7 @@ BEGIN
     DELETE FROM USER;
 END //
 DELIMITER ;
+
+UPDATE USER
+SET role = 'superadmin'
+WHERE email = "root@root.com";
