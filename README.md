@@ -137,3 +137,6 @@ DELIMITER ;
 UPDATE USER
 SET role = 'superadmin'
 WHERE email = "root@root.com";
+
+DELETE FROM USER
+WHERE role = "user";
