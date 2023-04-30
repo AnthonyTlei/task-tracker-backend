@@ -123,3 +123,12 @@ BEGIN
   SELECT * FROM USER WHERE email = userEmail;
 END //
 DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE create_user(IN p_first_name VARCHAR(255), IN p_last_name VARCHAR(255), IN p_email VARCHAR(255), IN p_hashedPassword VARCHAR(255))
+BEGIN
+  INSERT INTO USER(first_name, last_name, email, password, role)
+  VALUES(p_first_name, p_last_name, p_email, p_hashedPassword, 'user');
+END //
+DELIMITER ;
+
