@@ -2,6 +2,8 @@ import {
   Body,
   Controller,
   Get,
+  HttpException,
+  HttpStatus,
   Param,
   Post,
   Req,
@@ -25,7 +27,7 @@ export class UserController {
     const { user } = req.user;
     const user_id = user.id;
     if (user_id != id) {
-      throw new Error('You are not allowed to see this user tasks');
+      throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
     }
     const tasks = await this.userService.getUserTasks(id);
     return tasks;
