@@ -4,6 +4,7 @@ import * as bcrypt from 'bcrypt';
 import { ExistingUserDTO } from 'src/user/dto/existing-user.dto';
 import { NewUserDTO } from 'src/user/dto/new-user.dto';
 import { UserDetails } from 'src/user/user-details.interface';
+import { User } from 'src/user/user.entity';
 import { UserService } from 'src/user/user.service';
 
 @Injectable()
@@ -28,10 +29,8 @@ export class AuthService {
     email: string,
     password: string,
   ): Promise<UserDetails | null> {
-    const users = await this.userService._getUserByEmail(email);
-    const user = users[0];
-    const doesUserExist = !!user;
-    if (!doesUserExist) return null;
+    const user = await this.userService._getUserByEmail(email);
+    if (!user) return null;
     const doesPasswordMatch = await this._verifyPassword(
       password,
       user.password,
@@ -51,25 +50,23 @@ export class AuthService {
     return { token: jwt };
   }
 
-  async register(user: Readonly<NewUserDTO>): Promise<UserDetails | any> {
+  async register(user: Readonly<NewUserDTO>): Promise<User | any> {
     const { first_name, last_name, email, password } = user;
-    const existingUsers = await this.userService._getUserByEmail(email);
-    const existingUser = existingUsers[0];
+    const existingUser = await this.userService._getUserByEmail(email);
     if (existingUser)
       throw new HttpException(
         'An account with that email alredy exists',
         HttpStatus.CONFLICT,
       );
     const hashedPassword = await this.hashPassword(password);
-    await this.userService._create(
+    const newUser = await this.userService._create(
       first_name,
       last_name,
       email,
       hashedPassword,
     );
-    const users = await this.userService._getUserByEmail(email);
-    const newUser = users[0];
-    return this.userService._convertUserToUserDetails(newUser);
+    const newUserDetails = this.userService._convertUserToUserDetails(newUser);
+    return newUserDetails;
   }
 
   async verifyJwt(jwt: string): Promise<{ exp: number }> {

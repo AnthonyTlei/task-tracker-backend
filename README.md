@@ -86,7 +86,7 @@ USE dev;
 
 ## Tables
 
-CREATE TABLE USER (
+CREATE TABLE user (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -95,74 +95,24 @@ CREATE TABLE USER (
     role ENUM('user', 'admin', 'superadmin') NOT NULL
 );
 
-CREATE TABLE TASK (
+CREATE TABLE task (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     full_id VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
     status ENUM('backlog', 'progress', 'validating', 'done', 'paused', 'cancelled') NOT NULL,
     manager VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES USER(id)
+    FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 SHOW TABLES;
 
 ## Procedures
-
-DELIMITER //
-CREATE PROCEDURE get_all_users()
-BEGIN
-    SELECT * FROM USER;
-END //
-DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE get_all_tasks()
-BEGIN
-    SELECT * FROM TASK;
-END //
-DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE get_user_by_id(IN userId INT)
-BEGIN
-  SELECT * FROM USER WHERE id = userId;
-END //
-DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE get_task_by_id(IN taskId INT)
-BEGIN
-  SELECT * FROM TASK WHERE id = taskId;
-END //
-DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE get_user_by_email(IN userEmail VARCHAR(255))
-BEGIN
-  SELECT * FROM USER WHERE email = userEmail;
-END //
-DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE create_user(IN p_first_name VARCHAR(255), IN p_last_name VARCHAR(255), IN p_email VARCHAR(255), IN p_hashedPassword VARCHAR(255))
-BEGIN
-  INSERT INTO USER(first_name, last_name, email, password, role)
-  VALUES(p_first_name, p_last_name, p_email, p_hashedPassword, 'user');
-END //
-DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE flush_users()
-BEGIN
-    DELETE FROM USER;
-END //
-DELIMITER ;
 ## Misc
 
-UPDATE USER
+UPDATE user
 SET role = 'superadmin'
 WHERE email = "root@root.com";
 
-DELETE FROM USER
+DELETE FROM user
 WHERE role = "user";

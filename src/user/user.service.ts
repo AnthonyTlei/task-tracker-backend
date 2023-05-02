@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from './user.entity';
+import { User, UserRole } from './user.entity';
 import { UserDetails } from './user-details.interface';
 
 @Injectable()
@@ -31,22 +31,18 @@ export class UserService {
   }
 
   async _getUsers(): Promise<User[]> {
-    const response = await this.usersRepository.query('CALL get_all_users()');
-    return response[0];
+    const users = await this.usersRepository.find();
+    return users;
   }
 
-  async _getUserById(id: number): Promise<User[]> {
-    const response = await this.usersRepository.query(
-      `CALL get_user_by_id(${id})`,
-    );
-    return response[0];
+  async _getUserById(id: number): Promise<User> {
+    const user = await this.usersRepository.findOne({ where: { id } });
+    return user;
   }
 
-  async _getUserByEmail(email: string): Promise<User[]> {
-    const response = await this.usersRepository.query(
-      `CALL get_user_by_email("${email}")`,
-    );
-    return response[0];
+  async _getUserByEmail(email: string): Promise<User> {
+    const user = await this.usersRepository.findOne({ where: { email } });
+    return user;
   }
 
   async _create(
@@ -55,62 +51,33 @@ export class UserService {
     email: string,
     hashedPassword: string,
   ): Promise<User> {
-    const response = await this.usersRepository.query(
-      `CALL create_user("${first_name}", "${last_name}", "${email}", "${hashedPassword}")`,
-    );
-    return response[0];
+    const newUser = this.usersRepository.create({
+      first_name,
+      last_name,
+      password: hashedPassword,
+      email,
+      role: UserRole.USER,
+    });
+    await this.usersRepository.save(newUser);
+    return newUser;
   }
 
   /* These Methods can be directly called by controllers. */
-  async getUsersDetails(): Promise<UserDetails[] | null> {
-    const response = await this.usersRepository.query('CALL get_all_users()');
-    if (response[0].length == 0) return null;
-    const users = this._convertUsersToUsersDetails(response[0]);
-    return users;
+  async getUsersDetails(): Promise<UserDetails[]> {
+    const users = await this.usersRepository.find();
+    const usersDetails = this._convertUsersToUsersDetails(users);
+    return usersDetails;
   }
 
   async getUserDetailsByEmail(email: string): Promise<UserDetails | null> {
-    const response = await this.usersRepository.query(
-      `CALL get_user_by_email("${email}")`,
-    );
-    if (response[0].length == 0) return null;
-    const user = this._convertUserToUserDetails(response[0][0]);
-    return user;
+    const user = await this.usersRepository.findOne({ where: { email } });
+    const userDetails = this._convertUserToUserDetails(user);
+    return userDetails;
   }
 
   async getUserDetailsById(id: number): Promise<UserDetails | null> {
-    const response = await this.usersRepository.query(
-      `CALL get_user_by_id(${id})`,
-    );
-    if (response[0].length == 0) return null;
-    const user = this._convertUserToUserDetails(response[0][0]);
-    return user;
+    const user = await this.usersRepository.findOne({ where: { id } });
+    const userDetails = this._convertUserToUserDetails(user);
+    return userDetails;
   }
-
-  // async createUser(): Promise<User> {
-  //   // Create a new user object
-  //   const newUser = this.usersRepository.create({
-  //     first_name: 'test',
-  //     last_name: 'test',
-  //     password: 'test',
-  //     email: 'test',
-  //     role: 'user',
-  //   });
-
-  //   // Save the new user to the database
-  //   await this.usersRepository.save(newUser);
-
-  //   return newUser;
-  // }
-
-  // async getUsers(): Promise<User[] | null> {
-  //   try {
-  //     const response = await this.usersRepository.find();
-  //     console.log(response);
-  //     return response;
-  //   } catch (error) {
-  //     console.error(error);
-  //     return null;
-  //   }
-  // }
 }

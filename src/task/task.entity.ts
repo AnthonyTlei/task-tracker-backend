@@ -26,17 +26,13 @@ export class Task {
 
   @Column()
   @ManyToOne(() => User, (user) => user.id)
-  user_id: string;
+  user_id: number;
 
   @Column()
   title: string;
 
-  @Column({
-    type: 'enum',
-    enum: ['backlog', 'progress', 'validating', 'done', 'paused', 'cancelled'],
-    default: 'backlog',
-  })
-  status: string;
+  @Column()
+  status: TaskStatus;
 
   @Column()
   manager: string;

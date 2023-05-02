@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Task } from './task.entity';
+import { Task, TaskStatus } from './task.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
@@ -12,14 +12,35 @@ export class TaskService {
 
   /* These Methods can be directly called by controllers. */
   async getTasks(): Promise<Task[] | null> {
-    const response = await this.taskRepository.query('CALL get_all_tasks()');
-    return response[0];
+    const tasks = await this.taskRepository.find();
+    return tasks;
   }
 
-  async getTaskById(id: number): Promise<Task[] | null> {
-    const response = await this.taskRepository.query(
-      `CALL get_task_by_id("${id}")`,
-    );
-    return response[0];
+  async getTasksWithUsers(): Promise<Task[]> {
+    const tasks = await this.taskRepository.find({ relations: ['user'] });
+    return tasks;
+  }
+
+  async getTaskById(id: number): Promise<Task[]> {
+    const task = await this.taskRepository.find({ where: { id } });
+    return task;
+  }
+
+  async createTask(
+    full_id: string,
+    user_id: number,
+    title: string,
+    status: TaskStatus,
+    manager: string,
+  ): Promise<Task> {
+    const newTask = this.taskRepository.create({
+      full_id,
+      user_id,
+      title,
+      status,
+      manager,
+    });
+    await this.taskRepository.save(newTask);
+    return newTask;
   }
 }
