@@ -86,4 +86,31 @@ export class UserService {
     const user = this._convertUserToUserDetails(response[0][0]);
     return user;
   }
+
+  // async createUser(): Promise<User> {
+  //   // Create a new user object
+  //   const newUser = this.usersRepository.create({
+  //     first_name: 'test',
+  //     last_name: 'test',
+  //     password: 'test',
+  //     email: 'test',
+  //     role: 'user',
+  //   });
+
+  //   // Save the new user to the database
+  //   await this.usersRepository.save(newUser);
+
+  //   return newUser;
+  // }
+
+  // async getUsers(): Promise<User[] | null> {
+  //   try {
+  //     const response = await this.usersRepository.find();
+  //     console.log(response);
+  //     return response;
+  //   } catch (error) {
+  //     console.error(error);
+  //     return null;
+  //   }
+  // }
 }

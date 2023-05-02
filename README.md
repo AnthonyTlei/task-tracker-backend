@@ -84,6 +84,8 @@ CREATE DATABASE dev;
 SHOW DATABASES;
 USE dev;
 
+## Tables
+
 CREATE TABLE USER (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
@@ -93,7 +95,19 @@ CREATE TABLE USER (
     role ENUM('user', 'admin', 'superadmin') NOT NULL
 );
 
+CREATE TABLE TASK (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    full_id VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    status ENUM('backlog', 'progress', 'validating', 'done', 'paused', 'cancelled') NOT NULL,
+    manager VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES USER(id)
+);
+
 SHOW TABLES;
+
+## Procedures
 
 DELIMITER //
 CREATE PROCEDURE get_all_users()
@@ -102,13 +116,24 @@ BEGIN
 END //
 DELIMITER ;
 
-CALL get_all_users();
-DROP PROCEDURE get_user_by_id;
+DELIMITER //
+CREATE PROCEDURE get_all_tasks()
+BEGIN
+    SELECT * FROM TASK;
+END //
+DELIMITER ;
 
 DELIMITER //
 CREATE PROCEDURE get_user_by_id(IN userId INT)
 BEGIN
   SELECT * FROM USER WHERE id = userId;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE get_task_by_id(IN taskId INT)
+BEGIN
+  SELECT * FROM TASK WHERE id = taskId;
 END //
 DELIMITER ;
 
@@ -133,6 +158,7 @@ BEGIN
     DELETE FROM USER;
 END //
 DELIMITER ;
+## Misc
 
 UPDATE USER
 SET role = 'superadmin'
