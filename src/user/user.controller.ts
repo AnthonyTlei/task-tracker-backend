@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserRole } from './user.entity';
 import { RolesGuard } from 'src/common/guards/roles.guard';
@@ -13,7 +21,12 @@ export class UserController {
   @UseGuards(JwtGuard, RolesGuard)
   @Get(':id/tasks')
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async getUserTasks(@Param('id') id: number) {
+  async getUserTasks(@Param('id') id: number, @Req() req: any) {
+    const { user } = req.user;
+    const user_id = user.id;
+    if (user_id != id) {
+      throw new Error('You are not allowed to see this user tasks');
+    }
     const tasks = await this.userService.getUserTasks(id);
     return tasks;
   }
