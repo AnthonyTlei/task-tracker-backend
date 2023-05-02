@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
-import { User, UserRole } from './user.entity';
+import { UserRole } from './user.entity';
 import { RolesGuard } from 'src/common/guards/roles.guard';
 import { Roles } from 'src/common/decorators/roles.decorator';
 import { JwtGuard } from 'src/auth/guards/jwt.guard';
@@ -9,6 +9,14 @@ import { UserDetails } from './user-details.interface';
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
+
+  @UseGuards(JwtGuard, RolesGuard)
+  @Get(':id/tasks')
+  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
+  async getUserTasks(@Param('id') id: number) {
+    const tasks = await this.userService.getUserTasks(id);
+    return tasks;
+  }
 
   @UseGuards(JwtGuard, RolesGuard)
   @Get()

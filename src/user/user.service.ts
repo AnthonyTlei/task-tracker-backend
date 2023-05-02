@@ -80,4 +80,12 @@ export class UserService {
     const userDetails = this._convertUserToUserDetails(user);
     return userDetails;
   }
+
+  async getUserTasks(id: number) {
+    const user = await this.usersRepository.findOne({
+      where: { id },
+      relations: ['tasks'],
+    });
+    return user.tasks;
+  }
 }
