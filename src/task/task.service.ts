@@ -50,6 +50,7 @@ export class TaskService {
     if (!existingTask) {
       throw new NotFoundException(`Task with id ${id} not found`);
     }
+    // TODO: Validate the fields (for create too)
     Object.assign(existingTask, task);
     return await this.taskRepository.save(existingTask);
   }
