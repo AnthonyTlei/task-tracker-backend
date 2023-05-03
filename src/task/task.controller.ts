@@ -57,13 +57,13 @@ export class TaskController {
   @UseGuards(JwtGuard, RolesGuard)
   @Delete(':id')
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async deleteTask(@Param('id') id: number, @Req() req: any): Promise<void> {
+  async deleteTask(@Param('id') id: number, @Req() req: any): Promise<Task> {
     const { user } = req.user;
     const user_id = user.id;
     const task = await this.taskService.getTaskById(id);
     if (user_id != task.user_id) {
       throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
     }
-    return await this.taskService.deleteTask(id);
+    return task;
   }
 }
