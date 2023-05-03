@@ -64,6 +64,7 @@ export class TaskController {
     if (user_id != task.user_id) {
       throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
     }
+    await this.taskService.deleteTask(id);
     return task;
   }
 }
