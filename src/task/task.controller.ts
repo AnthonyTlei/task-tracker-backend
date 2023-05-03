@@ -1,4 +1,14 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Param,
+  Post,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { TaskService } from './task.service';
 import { JwtGuard } from 'src/auth/guards/jwt.guard';
 import { Roles } from 'src/common/decorators/roles.decorator';
@@ -14,21 +24,26 @@ export class TaskController {
   @UseGuards(JwtGuard, RolesGuard)
   @Get()
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async getUsers(): Promise<Task[]> {
+  async getTasks(): Promise<Task[]> {
     return await this.taskService.getTasks();
   }
 
   @UseGuards(JwtGuard, RolesGuard)
   @Get(':id')
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async getUser(@Param('id') id: number): Promise<Task[]> {
+  async getTaskById(@Param('id') id: number): Promise<Task[]> {
     return await this.taskService.getTaskById(id);
   }
 
   @UseGuards(JwtGuard, RolesGuard)
   @Post()
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async createTask(@Body() task: NewTaskDTO): Promise<Task> {
+  async createTask(@Body() task: NewTaskDTO, @Req() req: any): Promise<Task> {
+    const { user } = req.user;
+    const user_id = user.id;
+    if (user_id != task.user_id) {
+      throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
+    }
     return await this.taskService.createTask(
       task.full_id,
       task.user_id,
