@@ -7,6 +7,7 @@ import {
   HttpStatus,
   Param,
   Post,
+  Put,
   Req,
   UseGuards,
 } from '@nestjs/common';
@@ -52,6 +53,22 @@ export class TaskController {
       task.status,
       task.manager,
     );
+  }
+
+  @UseGuards(JwtGuard, RolesGuard)
+  @Put(':id')
+  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
+  async updateTask(
+    @Param('id') id: number,
+    @Body() task: NewTaskDTO,
+    @Req() req: any,
+  ): Promise<Task> {
+    const { user } = req.user;
+    const user_id = user.id;
+    if (user_id != task.user_id) {
+      throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
+    }
+    return await this.taskService.updateTask(id, task);
   }
 
   @UseGuards(JwtGuard, RolesGuard)
