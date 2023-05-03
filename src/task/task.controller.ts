@@ -18,6 +18,7 @@ import { RolesGuard } from 'src/common/guards/roles.guard';
 import { UserRole } from 'src/user/user.entity';
 import { Task } from './task.entity';
 import { NewTaskDTO } from './dto/new-task.dto';
+import { TaskOwnerGuard } from './guards/taskOwner.guard';
 
 @Controller('tasks')
 export class TaskController {
@@ -37,10 +38,28 @@ export class TaskController {
     return await this.taskService.getTaskById(id);
   }
 
+  @UseGuards(JwtGuard, RolesGuard, TaskOwnerGuard)
+  @Put(':id')
+  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
+  async updateTask(
+    @Param('id') id: number,
+    @Body() task: NewTaskDTO,
+  ): Promise<Task> {
+    return await this.taskService.updateTask(id, task);
+  }
+
+  @UseGuards(JwtGuard, RolesGuard, TaskOwnerGuard)
+  @Delete(':id')
+  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
+  async deleteTask(@Param('id') id: number): Promise<Task> {
+    return await this.taskService.deleteTask(id);
+  }
+
   @UseGuards(JwtGuard, RolesGuard)
   @Post()
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
   async createTask(@Body() task: NewTaskDTO, @Req() req: any): Promise<Task> {
+    // TODO: refactor this whole endpoint, create a new guard or change the parameters. Also service.createTask shoudl take an object as parameter instead of all the fields.
     const { user } = req.user;
     const user_id = user.id;
     if (user_id != task.user_id) {
@@ -53,36 +72,5 @@ export class TaskController {
       task.status,
       task.manager,
     );
-  }
-
-  @UseGuards(JwtGuard, RolesGuard)
-  @Put(':id')
-  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async updateTask(
-    @Param('id') id: number,
-    @Body() task: NewTaskDTO,
-    @Req() req: any,
-  ): Promise<Task> {
-    const { user } = req.user;
-    const user_id = user.id;
-    const oldTask = await this.taskService.getTaskById(id);
-    if (user_id != oldTask.user_id) {
-      throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
-    }
-    return await this.taskService.updateTask(id, task);
-  }
-
-  @UseGuards(JwtGuard, RolesGuard)
-  @Delete(':id')
-  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async deleteTask(@Param('id') id: number, @Req() req: any): Promise<Task> {
-    const { user } = req.user;
-    const user_id = user.id;
-    const task = await this.taskService.getTaskById(id);
-    if (user_id != task.user_id) {
-      throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
-    }
-    await this.taskService.deleteTask(id);
-    return task;
   }
 }
