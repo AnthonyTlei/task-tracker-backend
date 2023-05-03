@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   HttpException,
   HttpStatus,
@@ -31,7 +32,7 @@ export class TaskController {
   @UseGuards(JwtGuard, RolesGuard)
   @Get(':id')
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async getTaskById(@Param('id') id: number): Promise<Task[]> {
+  async getTaskById(@Param('id') id: number): Promise<Task> {
     return await this.taskService.getTaskById(id);
   }
 
@@ -51,5 +52,18 @@ export class TaskController {
       task.status,
       task.manager,
     );
+  }
+
+  @UseGuards(JwtGuard, RolesGuard)
+  @Delete(':id')
+  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
+  async deleteTask(@Param('id') id: number, @Req() req: any): Promise<void> {
+    const { user } = req.user;
+    const user_id = user.id;
+    const task = await this.taskService.getTaskById(id);
+    if (user_id != task.user_id) {
+      throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
+    }
+    return await this.taskService.deleteTask(id);
   }
 }

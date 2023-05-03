@@ -21,8 +21,8 @@ export class TaskService {
     return tasks;
   }
 
-  async getTaskById(id: number): Promise<Task[]> {
-    const task = await this.taskRepository.find({ where: { id } });
+  async getTaskById(id: number): Promise<Task> {
+    const task = await this.taskRepository.findOne({ where: { id } });
     return task;
   }
 
@@ -42,5 +42,9 @@ export class TaskService {
     });
     await this.taskRepository.save(newTask);
     return newTask;
+  }
+
+  async deleteTask(id: number): Promise<void> {
+    await this.taskRepository.delete(id);
   }
 }
