@@ -19,7 +19,7 @@ import { UserRole } from 'src/user/user.entity';
 import { Task } from './task.entity';
 import { NewTaskDTO } from './dto/new-task.dto';
 
-@Controller('task')
+@Controller('tasks')
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
