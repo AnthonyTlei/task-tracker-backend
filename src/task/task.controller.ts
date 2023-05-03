@@ -46,13 +46,23 @@ export class TaskController {
     if (user_id != task.user_id) {
       throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
     }
-    return await this.taskService.createTask(
-      task.full_id,
-      task.user_id,
-      task.title,
-      task.status,
-      task.manager,
-    );
+    try {
+      return await this.taskService.createTask(
+        task.full_id,
+        task.user_id,
+        task.title,
+        task.status,
+        task.manager,
+      );
+    } catch (error) {
+      if (error.code == 'ER_DUP_ENTRY') {
+        throw new HttpException(
+          'Task with that id already exists',
+          HttpStatus.BAD_REQUEST,
+        );
+      }
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+    }
   }
 
   @UseGuards(JwtGuard, RolesGuard)
