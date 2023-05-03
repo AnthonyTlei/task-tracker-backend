@@ -65,7 +65,8 @@ export class TaskController {
   ): Promise<Task> {
     const { user } = req.user;
     const user_id = user.id;
-    if (user_id != task.user_id) {
+    const oldTask = await this.taskService.getTaskById(id);
+    if (user_id != oldTask.user_id) {
       throw new HttpException('Invalid user id', HttpStatus.UNAUTHORIZED);
     }
     return await this.taskService.updateTask(id, task);
