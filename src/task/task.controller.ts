@@ -27,7 +27,7 @@ export class TaskController {
   @Get()
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
   async getTasks(): Promise<Task[]> {
-    return await this.taskService.getTasks();
+    return await this.taskService.getTasksWithUserDetails();
   }
 
   @UseGuards(JwtGuard, RolesGuard)

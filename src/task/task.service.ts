@@ -22,6 +22,22 @@ export class TaskService {
     return tasks;
   }
 
+  async getTasksWithUserDetails(): Promise<Task[]> {
+    const tasks = await this.taskRepository
+      .createQueryBuilder('task')
+      .leftJoinAndSelect('task.user', 'user')
+      .select([
+        'task',
+        'user.id',
+        'user.first_name',
+        'user.last_name',
+        'user.email',
+        'user.role',
+      ])
+      .getMany();
+    return tasks;
+  }
+
   async getTaskById(id: number): Promise<Task> {
     const task = await this.taskRepository.findOne({ where: { id } });
     return task;
