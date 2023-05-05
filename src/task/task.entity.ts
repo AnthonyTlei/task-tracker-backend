@@ -14,6 +14,7 @@ export enum TaskStatus {
   DONE = 'done',
   PAUSED = 'paused',
   CANCELLED = 'cancelled',
+  UNKNOWN = 'unknown',
 }
 
 @Entity()

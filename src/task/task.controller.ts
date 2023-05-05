@@ -22,6 +22,7 @@ import { Task } from './task.entity';
 import { NewTaskDTO } from './dto/new-task.dto';
 import { TaskOwnerGuard } from './guards/taskOwner.guard';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { ImportResults } from './dto/import-result.dto';
 
 @Controller('tasks')
 export class TaskController {
@@ -64,7 +65,8 @@ export class TaskController {
   @UseInterceptors(FileInterceptor('file'))
   async importTasks(
     @UploadedFile() file: Express.Multer.File,
-  ): Promise<Task[]> {
+  ): Promise<ImportResults> {
+    // TODO: add options to specify the label for each column in the excel (e.g. id, title, assignee, status, manager) used in convertExcelToJSON
     return await this.taskService.importTasks(file);
   }
 

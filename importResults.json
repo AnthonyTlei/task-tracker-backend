@@ -1,0 +1,2238 @@
+{
+  "total": 272,
+  "success": [
+    {
+      "full_id": "P10004450-196926",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4272
+    },
+    {
+      "full_id": "P10004450-196935",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4273
+    },
+    {
+      "full_id": "P10004450-18921 ",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Ghevond Badalyan",
+      "id": 4274
+    },
+    {
+      "full_id": "P10004450-16925",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4275
+    },
+    {
+      "full_id": "P10004450-202478",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4276
+    },
+    {
+      "full_id": "P10004450-195523",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4277
+    },
+    {
+      "full_id": "P10004450-196569",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4278
+    },
+    {
+      "full_id": "P10004450-211104",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Ghevond Badalyan",
+      "id": 4279
+    },
+    {
+      "full_id": "P10004450-180680",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4280
+    },
+    {
+      "full_id": "P10004450-186664",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4281
+    },
+    {
+      "full_id": "P10004450-186647",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Ghevond Badalyan",
+      "id": 4282
+    },
+    {
+      "full_id": "P10004450-164469",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4283
+    },
+    {
+      "full_id": "P10004450-208865",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4284
+    },
+    {
+      "full_id": "P10004450-206211",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4285
+    },
+    {
+      "full_id": "P10004450-182056",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4286
+    },
+    {
+      "full_id": "P10004450-178002",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4287
+    },
+    {
+      "full_id": "P10004450-211020",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4288
+    },
+    {
+      "full_id": "P10004450-209451",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Ghevond Badalyan",
+      "id": 4289
+    },
+    {
+      "full_id": "P10004450-209522",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4290
+    },
+    {
+      "full_id": "P10004450-208855",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4291
+    },
+    {
+      "full_id": "P10004450-207454",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4292
+    },
+    {
+      "full_id": "P10004450-207446",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4293
+    },
+    {
+      "full_id": "P10004450-205445",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4294
+    },
+    {
+      "full_id": "P10004450-199576",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4295
+    },
+    {
+      "full_id": "P10004450-204326",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4296
+    },
+    {
+      "full_id": "P10004450-193123",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Ghevond Badalyan",
+      "id": 4297
+    },
+    {
+      "full_id": "P10004450-210820",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4298
+    },
+    {
+      "full_id": "P10004450-210515",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4299
+    },
+    {
+      "full_id": "P10004450-210525",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4300
+    },
+    {
+      "full_id": "P10004450-208355",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Ghevond Badalyan",
+      "id": 4301
+    },
+    {
+      "full_id": "P10004450-207481",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Ghevond Badalyan",
+      "id": 4302
+    },
+    {
+      "full_id": "P10004450-204951",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4303
+    },
+    {
+      "full_id": "P10004450-200592",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4304
+    },
+    {
+      "full_id": "P10004450-194791",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4305
+    },
+    {
+      "full_id": "P10004450-186233",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4306
+    },
+    {
+      "full_id": "P10004450-17011",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4307
+    },
+    {
+      "full_id": "P10004450-18136",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Argam Hakobyan",
+      "id": 4308
+    },
+    {
+      "full_id": "P10004450-13893",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4309
+    },
+    {
+      "full_id": "P10004450-197180",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4310
+    },
+    {
+      "full_id": "P10004450-205795",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4311
+    },
+    {
+      "full_id": "P10004450-210421",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for owner input",
+      "manager": "Ghevond Badalyan",
+      "id": 4312
+    },
+    {
+      "full_id": "P10004450-14636",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4313
+    },
+    {
+      "full_id": "P10004450-199764",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4314
+    },
+    {
+      "full_id": "P10004450-193739",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Ghevond Badalyan",
+      "id": 4315
+    },
+    {
+      "full_id": "P10004450-192346",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4316
+    },
+    {
+      "full_id": "P10004450-189117",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4317
+    },
+    {
+      "full_id": "P10004450-185660",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4318
+    },
+    {
+      "full_id": "P10004450-17181",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4319
+    },
+    {
+      "full_id": "P10004450-13706",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for reporter input",
+      "manager": "Ghevond Badalyan",
+      "id": 4320
+    },
+    {
+      "full_id": "P10004450-10802",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4321
+    },
+    {
+      "full_id": "P10004450-7330",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for reporter input",
+      "manager": "Ghevond Badalyan",
+      "id": 4322
+    },
+    {
+      "full_id": "P10004450-7520",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4323
+    },
+    {
+      "full_id": "P10004450-197263",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Ghevond Badalyan",
+      "id": 4324
+    },
+    {
+      "full_id": "P10004450-198169",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4325
+    },
+    {
+      "full_id": "P10004450-194299",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4326
+    },
+    {
+      "full_id": "P10004450-18176",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4327
+    },
+    {
+      "full_id": "P10004450-193918",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4328
+    },
+    {
+      "full_id": "P10004450-172164",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4329
+    },
+    {
+      "full_id": "P10004450-210524",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4330
+    },
+    {
+      "full_id": "P10004450-210526",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4331
+    },
+    {
+      "full_id": "P10004450-210528",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4332
+    },
+    {
+      "full_id": "P10004450-210530",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4333
+    },
+    {
+      "full_id": "P10004450-210981",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4334
+    },
+    {
+      "full_id": "P10004450-210990",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4335
+    },
+    {
+      "full_id": "P10004450-211066",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4336
+    },
+    {
+      "full_id": "P10004450-211097",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4337
+    },
+    {
+      "full_id": "P10004450-210514",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4338
+    },
+    {
+      "full_id": " P10004450-212227",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4339
+    },
+    {
+      "full_id": " P10004450-212387",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4340
+    },
+    {
+      "full_id": "P10004450-18921",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4341
+    },
+    {
+      "full_id": "P10004450-208455",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4342
+    },
+    {
+      "full_id": "P10004450-206296",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Argam Hakobyan",
+      "id": 4343
+    },
+    {
+      "full_id": "P10004450-173669",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4344
+    },
+    {
+      "full_id": "P10004450-206851",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4345
+    },
+    {
+      "full_id": "P10004450-199567",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4346
+    },
+    {
+      "full_id": "P10004450-212463",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4347
+    },
+    {
+      "full_id": "P10004450-209838",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Ghevond Badalyan",
+      "id": 4348
+    },
+    {
+      "full_id": "P10004450-205791",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4349
+    },
+    {
+      "full_id": "P10004450-172692",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4350
+    },
+    {
+      "full_id": "P10004450-213238",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4351
+    },
+    {
+      "full_id": "P10004450-14419",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4352
+    },
+    {
+      "full_id": "P10004450-17109",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4353
+    },
+    {
+      "full_id": "P10004450-17715",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4354
+    },
+    {
+      "full_id": "P10004450-175108",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4355
+    },
+    {
+      "full_id": "P10004450-181588",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4356
+    },
+    {
+      "full_id": "P10004450-191317",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4357
+    },
+    {
+      "full_id": "P10004450-212264",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4358
+    },
+    {
+      "full_id": "P10004450-212935",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4359
+    },
+    {
+      "full_id": "P10004450-204618",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4360
+    },
+    {
+      "full_id": "P10004450-205376",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4361
+    },
+    {
+      "full_id": "P10004450-205274",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4362
+    },
+    {
+      "full_id": "P10004450-205447",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4363
+    },
+    {
+      "full_id": "P10004450-205825",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4364
+    },
+    {
+      "full_id": "P10004450-208556",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4365
+    },
+    {
+      "full_id": "P10004450-213099",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4366
+    },
+    {
+      "full_id": "P10004450-212464",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ryan Chu",
+      "id": 4367
+    },
+    {
+      "full_id": "P10004450-212824 ",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4368
+    },
+    {
+      "full_id": "P10004450-213828",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4369
+    },
+    {
+      "full_id": "P10004450-213096",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4370
+    },
+    {
+      "full_id": "P10004450-214222",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4371
+    },
+    {
+      "full_id": "P10004450-213286",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Ghevond Badalyan",
+      "id": 4372
+    },
+    {
+      "full_id": "P10004450-7521",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4373
+    },
+    {
+      "full_id": "P10004450-214167",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4374
+    },
+    {
+      "full_id": "P10004450-213282",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4375
+    },
+    {
+      "full_id": "P10004450-213280 ",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for owner input",
+      "manager": "Ghevond Badalyan",
+      "id": 4376
+    },
+    {
+      "full_id": "P10004450-211094",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Ghevond Badalyan",
+      "id": 4377
+    },
+    {
+      "full_id": "P10004450-206246",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4378
+    },
+    {
+      "full_id": "P10004450-205787",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4379
+    },
+    {
+      "full_id": "P10004450-211566",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4380
+    },
+    {
+      "full_id": "P10004450-208217",
+      "user_id": 1,
+      "title": "",
+      "status": "committed",
+      "manager": "Argam Hakobyan",
+      "id": 4381
+    },
+    {
+      "full_id": "P10004450-207955",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4382
+    },
+    {
+      "full_id": "P10004450-182028",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ryan Chu",
+      "id": 4383
+    },
+    {
+      "full_id": "P10004450-207450",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4384
+    },
+    {
+      "full_id": "P10004450-213760",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4385
+    },
+    {
+      "full_id": "P10004450-213841",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4386
+    },
+    {
+      "full_id": "P10004450-214610",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4387
+    },
+    {
+      "full_id": "P10004450-214611",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4388
+    },
+    {
+      "full_id": "P10004450-214622",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4389
+    },
+    {
+      "full_id": "P10004450-214736",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4390
+    },
+    {
+      "full_id": "P10004450-209230",
+      "user_id": 1,
+      "title": "",
+      "status": "frozen",
+      "manager": "Ghevond Badalyan",
+      "id": 4391
+    },
+    {
+      "full_id": "P10004450-201734",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4392
+    },
+    {
+      "full_id": "P10004450-200434",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Ghevond Badalyan",
+      "id": 4393
+    },
+    {
+      "full_id": "P10004450-214707",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4394
+    },
+    {
+      "full_id": "P10004450-205935",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4395
+    },
+    {
+      "full_id": "P10004450-210505",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4396
+    },
+    {
+      "full_id": "P10004450-214786",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4397
+    },
+    {
+      "full_id": "P10004450-214832",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4398
+    },
+    {
+      "full_id": "P10004450-214835",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Argam Hakobyan",
+      "id": 4399
+    },
+    {
+      "full_id": "P10004450-210527",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4400
+    },
+    {
+      "full_id": "P10004450-205990",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4401
+    },
+    {
+      "full_id": "P10004450-196427",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4402
+    },
+    {
+      "full_id": "P10004450-196334",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4403
+    },
+    {
+      "full_id": "P10004450-210267",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4408
+    },
+    {
+      "full_id": "P10004450-215989",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4410
+    },
+    {
+      "full_id": "P10004450-215911",
+      "user_id": 1,
+      "title": "",
+      "status": "started investigation",
+      "manager": "Ghevond Badalyan",
+      "id": 4411
+    },
+    {
+      "full_id": "P10004450-204619",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4413
+    },
+    {
+      "full_id": "P10004450-210975",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4414
+    },
+    {
+      "full_id": "P10004450-192683",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4415
+    },
+    {
+      "full_id": "P10004450-202899",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4416
+    },
+    {
+      "full_id": "P10004450-211068",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Argam Hakobyan",
+      "id": 4417
+    },
+    {
+      "full_id": "P10004450-215164",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for review",
+      "manager": "Argam Hakobyan",
+      "id": 4418
+    },
+    {
+      "full_id": "P10004450-214914",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4419
+    },
+    {
+      "full_id": "P10004450-215229",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4420
+    },
+    {
+      "full_id": "P10004450-215208",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4421
+    },
+    {
+      "full_id": "P10004450-215161",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Argam Hakobyan",
+      "id": 4422
+    },
+    {
+      "full_id": "P10004450-211076",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4423
+    },
+    {
+      "full_id": "P10004450-204159",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4424
+    },
+    {
+      "full_id": "P10004450-179416",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for owner input",
+      "manager": "Argam Hakobyan",
+      "id": 4425
+    },
+    {
+      "full_id": "P10004450-189582",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4426
+    },
+    {
+      "full_id": "P10004450-215377",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4427
+    },
+    {
+      "full_id": "P10004450-215224",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4428
+    },
+    {
+      "full_id": "P10004450-214943",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4429
+    },
+    {
+      "full_id": "P10004450-215270",
+      "user_id": 1,
+      "title": "",
+      "status": "solution implemented",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4430
+    },
+    {
+      "full_id": "P10004450-181375",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4431
+    },
+    {
+      "full_id": "P10004450-181341",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4432
+    },
+    {
+      "full_id": "P10004450-181339",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4433
+    },
+    {
+      "full_id": "P10004450-181174",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4434
+    },
+    {
+      "full_id": "P10004450-181057",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4435
+    },
+    {
+      "full_id": "P10004450-181049",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4436
+    },
+    {
+      "full_id": "P10004450-213777",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4437
+    },
+    {
+      "full_id": "P10004450-210837",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Argam Hakobyan",
+      "id": 4438
+    },
+    {
+      "full_id": "P10004450-214806",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Jeff Brubaker",
+      "id": 4441
+    },
+    {
+      "full_id": "P10004450-215371",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Jeff Brubaker",
+      "id": 4442
+    },
+    {
+      "full_id": "P10004450-215657",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4443
+    },
+    {
+      "full_id": "P10004450-215750",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4444
+    },
+    {
+      "full_id": "P10004450-199645",
+      "user_id": 1,
+      "title": "",
+      "status": "committed",
+      "manager": "Ghevond Badalyan",
+      "id": 4445
+    },
+    {
+      "full_id": "P10004450-210531",
+      "user_id": 1,
+      "title": "",
+      "status": "frozen",
+      "manager": "Argam Hakobyan",
+      "id": 4446
+    },
+    {
+      "full_id": "P10004450-210529",
+      "user_id": 1,
+      "title": "",
+      "status": "frozen",
+      "manager": "Argam Hakobyan",
+      "id": 4447
+    },
+    {
+      "full_id": "P10004450-210980",
+      "user_id": 1,
+      "title": "",
+      "status": "frozen",
+      "manager": "Argam Hakobyan",
+      "id": 4448
+    },
+    {
+      "full_id": "P10004450-210986",
+      "user_id": 1,
+      "title": "",
+      "status": "frozen",
+      "manager": "Argam Hakobyan",
+      "id": 4449
+    },
+    {
+      "full_id": "P10004450-200745",
+      "user_id": 1,
+      "title": "",
+      "status": "frozen",
+      "manager": "Argam Hakobyan",
+      "id": 4450
+    },
+    {
+      "full_id": "P10004450-213985",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for owner input",
+      "manager": "Argam Hakobyan",
+      "id": 4451
+    },
+    {
+      "full_id": "P10004450-216192",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4452
+    },
+    {
+      "full_id": "P10004450-215959",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4453
+    },
+    {
+      "full_id": "P10004450-216569",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4454
+    },
+    {
+      "full_id": "P10004450-216105",
+      "user_id": 1,
+      "title": "",
+      "status": "started investigation",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4455
+    },
+    {
+      "full_id": "P10004450-216567",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Jeff Brubaker",
+      "id": 4456
+    },
+    {
+      "full_id": "P10004450-216630",
+      "user_id": 1,
+      "title": "",
+      "status": "not a bug",
+      "manager": "Argam Hakobyan",
+      "id": 4457
+    },
+    {
+      "full_id": "P10004450-209139",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4458
+    },
+    {
+      "full_id": "P10004450-208945",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4459
+    },
+    {
+      "full_id": "P10004450-210979",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4460
+    },
+    {
+      "full_id": "P10004450-206715",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4461
+    },
+    {
+      "full_id": "P10004450-195039",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Lusine Khachatryan",
+      "id": 4462
+    },
+    {
+      "full_id": "P10004450-201052",
+      "user_id": 1,
+      "title": "",
+      "status": "backlog",
+      "manager": "Lusine Khachatryan",
+      "id": 4463
+    },
+    {
+      "full_id": "P10004450-217138",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4464
+    },
+    {
+      "full_id": "P10004450-218271",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4465
+    },
+    {
+      "full_id": "P10004450-218519",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4466
+    },
+    {
+      "full_id": "P10004450-218520",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4467
+    },
+    {
+      "full_id": "P10004450-218909",
+      "user_id": 1,
+      "title": "",
+      "status": "solution implemented",
+      "manager": "Lusine Khachatryan",
+      "id": 4468
+    },
+    {
+      "full_id": "P10004450-216679",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4469
+    },
+    {
+      "full_id": "P10004450-219195",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4470
+    },
+    {
+      "full_id": "P10004450-219224",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4471
+    },
+    {
+      "full_id": "P10004450-207807",
+      "user_id": 1,
+      "title": "",
+      "status": "backlog",
+      "manager": "Lusine Khachatryan",
+      "id": 4472
+    },
+    {
+      "full_id": "P10004450-219539",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4473
+    },
+    {
+      "full_id": "P10004450-219989",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4474
+    },
+    {
+      "full_id": "P10004450-219742",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4475
+    },
+    {
+      "full_id": "P10004450-220691",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4476
+    },
+    {
+      "full_id": "P10004450-220671",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4477
+    },
+    {
+      "full_id": "P10004450-220703",
+      "user_id": 1,
+      "title": "",
+      "status": "solution implemented",
+      "manager": "Lusine Khachatryan",
+      "id": 4478
+    },
+    {
+      "full_id": "P10004450-220736",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4479
+    },
+    {
+      "full_id": "P10004450-220732",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for owner input",
+      "manager": "Lusine Khachatryan",
+      "id": 4480
+    },
+    {
+      "full_id": "P10004450-220851",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4481
+    },
+    {
+      "full_id": "P10004450-214612",
+      "user_id": 1,
+      "title": "",
+      "status": "validation",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4482
+    },
+    {
+      "full_id": "P10004450-209226",
+      "user_id": 1,
+      "title": "",
+      "status": "solved by synopsys",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4483
+    },
+    {
+      "full_id": "P10004450-219866",
+      "user_id": 1,
+      "title": "",
+      "status": "validation",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4484
+    },
+    {
+      "full_id": "P10004450-219693",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4485
+    },
+    {
+      "full_id": "P10004450-219695",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4486
+    },
+    {
+      "full_id": "P10004450-219500",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4487
+    },
+    {
+      "full_id": "P10004450-219746",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4488
+    },
+    {
+      "full_id": "P10004450-219871",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4489
+    },
+    {
+      "full_id": "P10004450-218231",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Jeff Brubaker",
+      "id": 4491
+    },
+    {
+      "full_id": "P10004450-210750",
+      "user_id": 1,
+      "title": "",
+      "status": "backlog",
+      "manager": "Ghevond Badalyan",
+      "id": 4492
+    },
+    {
+      "full_id": "P10004450-218521",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4493
+    },
+    {
+      "full_id": "P10004450-220286",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4494
+    },
+    {
+      "full_id": "P10004450-220963",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Lusine Khachatryan",
+      "id": 4495
+    },
+    {
+      "full_id": "P10004450-221114",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4496
+    },
+    {
+      "full_id": "P10004450-217963",
+      "user_id": 1,
+      "title": "",
+      "status": "started investigation",
+      "manager": "Ghevond Badalyan",
+      "id": 4497
+    },
+    {
+      "full_id": "P10004450-217382",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4498
+    },
+    {
+      "full_id": "P10004450-216794",
+      "user_id": 1,
+      "title": "",
+      "status": "committed",
+      "manager": "Ghevond Badalyan",
+      "id": 4499
+    },
+    {
+      "full_id": "P10004450-217835",
+      "user_id": 1,
+      "title": "",
+      "status": "unknown",
+      "manager": "Ghevond Badalyan",
+      "id": 4501
+    },
+    {
+      "full_id": "P10004450-217358",
+      "user_id": 1,
+      "title": "",
+      "status": "unknown",
+      "manager": "Ghevond Badalyan",
+      "id": 4502
+    },
+    {
+      "full_id": "P10004450-216062",
+      "user_id": 1,
+      "title": "",
+      "status": "unknown",
+      "manager": "Ghevond Badalyan",
+      "id": 4503
+    },
+    {
+      "full_id": "P10004450-216979",
+      "user_id": 1,
+      "title": "",
+      "status": "unknown",
+      "manager": "Ghevond Badalyan",
+      "id": 4504
+    },
+    {
+      "full_id": "P10004450-216883",
+      "user_id": 1,
+      "title": "",
+      "status": "unknown",
+      "manager": "Ghevond Badalyan",
+      "id": 4505
+    },
+    {
+      "full_id": " P10004450-220906",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4506
+    },
+    {
+      "full_id": "P10004450-213001",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": " Argam Hakobyan",
+      "id": 4507
+    },
+    {
+      "full_id": "P10004450-212751",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4508
+    },
+    {
+      "full_id": "P10004450-217355",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4509
+    },
+    {
+      "full_id": "P10004450-180571",
+      "user_id": 1,
+      "title": "",
+      "status": "validation",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4510
+    },
+    {
+      "full_id": "P10004450-192615",
+      "user_id": 1,
+      "title": "",
+      "status": "backlog",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4511
+    },
+    {
+      "full_id": "P10004450-207930",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4512
+    },
+    {
+      "full_id": "P10004450-221755",
+      "user_id": 1,
+      "title": "",
+      "status": "validation",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4513
+    },
+    {
+      "full_id": "P10004450-215356",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4514
+    },
+    {
+      "full_id": "P10004450-220124",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4515
+    },
+    {
+      "full_id": "P10004450-218228",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for manager input",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4516
+    },
+    {
+      "full_id": "P10004450-209433",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Argam Hakobyan",
+      "id": 4517
+    },
+    {
+      "full_id": "P10004450-202306",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4518
+    },
+    {
+      "full_id": "P10004450-15153",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4519
+    },
+    {
+      "full_id": "P10004450-215167",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4520
+    },
+    {
+      "full_id": "P10004450-2733",
+      "user_id": 1,
+      "title": "",
+      "status": "solution implemented",
+      "manager": "Ghevond Badalyan",
+      "id": 4521
+    },
+    {
+      "full_id": "P10004450-222346",
+      "user_id": 1,
+      "title": "",
+      "status": "validation",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4522
+    },
+    {
+      "full_id": "P90060183-356",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for review",
+      "manager": "Ghevond Badalyan",
+      "id": 4523
+    },
+    {
+      "full_id": "P10004450-222674",
+      "user_id": 1,
+      "title": "",
+      "status": "started investigation",
+      "manager": "Ghevond Badalyan",
+      "id": 4524
+    },
+    {
+      "full_id": "P10004450-203913",
+      "user_id": 1,
+      "title": "",
+      "status": "cancelled",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4525
+    },
+    {
+      "full_id": "P10004450-222940",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4526
+    },
+    {
+      "full_id": "P10004450-222938",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4527
+    },
+    {
+      "full_id": "P10004450-222983",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4528
+    },
+    {
+      "full_id": "P10004450-222763",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4529
+    },
+    {
+      "full_id": "P10004450-222747",
+      "user_id": 1,
+      "title": "",
+      "status": "unknown",
+      "manager": "Ghevond Badalyan",
+      "id": 4530
+    },
+    {
+      "full_id": "P10004450-216708",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4531
+    },
+    {
+      "full_id": "P10004450-222601",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4532
+    },
+    {
+      "full_id": "P10004450-223115",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4533
+    },
+    {
+      "full_id": "P10004450-214971",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4534
+    },
+    {
+      "full_id": "P10004450-223120",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4535
+    },
+    {
+      "full_id": "P10004450-222039",
+      "user_id": 1,
+      "title": "",
+      "status": "started investigation",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4537
+    },
+    {
+      "full_id": "P10004450-222052",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4538
+    },
+    {
+      "full_id": "P10004450-222576",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Vardan Hayrapetyan",
+      "id": 4539
+    },
+    {
+      "full_id": "P10004450-223330",
+      "user_id": 1,
+      "title": "",
+      "status": "waiting for reporter input",
+      "manager": "Lusine Khachatryan",
+      "id": 4540
+    },
+    {
+      "full_id": "P10004450-223332",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4541
+    },
+    {
+      "full_id": "P10044550-223329",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Lusine Khachatryan",
+      "id": 4542
+    },
+    {
+      "full_id": "P10004450-223331",
+      "user_id": 1,
+      "title": "",
+      "status": "done",
+      "manager": "Ghevond Badalyan",
+      "id": 4543
+    }
+  ],
+  "fails": [
+    {
+      "task": {
+        "full_id": "P10004450-210527",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Ghevond Badalyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-210527"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-205990",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Ghevond Badalyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-205990"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-196427",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Ghevond Badalyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-196427"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-196334",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Ghevond Badalyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-196334"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-205935",
+        "user_id": 1,
+        "title": "",
+        "status": "cancelled",
+        "manager": "Argam Hakobyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-205935"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-210267",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Argam Hakobyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-210267"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-215989",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Argam Hakobyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-215989"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-215911",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Ghevond Badalyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-215911"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-219746",
+        "user_id": 1,
+        "title": "",
+        "status": "done",
+        "manager": "Vardan Hayrapetyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-219746"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-218520",
+        "user_id": 1,
+        "title": "",
+        "status": "unknown",
+        "manager": "Ghevond Badalyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-218520"
+      }
+    },
+    {
+      "task": {
+        "full_id": "P10004450-203913",
+        "user_id": 1,
+        "title": "",
+        "status": "validation",
+        "manager": "Vardan Hayrapetyan"
+      },
+      "error": {
+        "type": "DUPLICATE",
+        "message": "Duplicate Entry for task with id: P10004450-203913"
+      }
+    }
+  ]
+}

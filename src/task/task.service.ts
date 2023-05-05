@@ -6,6 +6,12 @@ import { NewTaskDTO } from './dto/new-task.dto';
 import { convertExcelToJSON } from 'src/helpers/excel';
 import { JsonTaskDTO } from './dto/json-task.dto';
 import { UserService } from 'src/user/user.service';
+import {
+  ErrorType,
+  FailTask,
+  ImportError,
+  ImportResults,
+} from './dto/import-result.dto';
 
 @Injectable()
 export class TaskService {
@@ -16,17 +22,40 @@ export class TaskService {
   ) {}
 
   /* Utilities */
+
+  _parseError(error: any): ImportError {
+    const errorString = JSON.stringify(error);
+    const jsonError = JSON.parse(errorString);
+    let errorCode = ErrorType.UNKNOWN;
+    let message = 'Unknown Error';
+    switch (jsonError.driverError.code) {
+      case 'ER_DUP_ENTRY':
+        errorCode = ErrorType.DUPLICATE;
+        message =
+          'Duplicate Entry for task with id: ' + jsonError.parameters[0];
+        break;
+      default:
+        errorCode = ErrorType.UNKNOWN;
+        break;
+    }
+    const parsedError: ImportError = {
+      type: errorCode,
+      message,
+    };
+    return parsedError;
+  }
+
   async _convertJsonToTask(data: JsonTaskDTO[]): Promise<NewTaskDTO[]> {
     const tasks: NewTaskDTO[] = [];
     for (const entry of data) {
-      // TODO: map the users to user_id?
       const user = await this.userService._getUserByFirstName(entry.assignee);
       const userId = user?.id || 1;
       const task: NewTaskDTO = {
         full_id: entry.id,
         user_id: userId,
         title: entry.title || '',
-        status: entry.status.toLowerCase() as TaskStatus,
+        status:
+          (entry.status?.toLowerCase() as TaskStatus) || TaskStatus.UNKNOWN,
         manager: entry.manager,
       };
       tasks.push(task);
@@ -34,19 +63,37 @@ export class TaskService {
     return tasks;
   }
 
-  async _createTasks(tasks: NewTaskDTO[]): Promise<Task[]> {
+  async _createTasks(tasks: NewTaskDTO[]): Promise<ImportResults> {
     const newTasks: Task[] = [];
+    const failedTasks: FailTask[] = [];
+    const total = tasks.length;
     for (const task of tasks) {
-      const newTask = await this.createTask(
-        task.full_id,
-        task.user_id,
-        task.title,
-        task.status,
-        task.manager,
-      );
-      newTasks.push(newTask);
+      try {
+        const newTask = await this.createTask(
+          task.full_id,
+          task.user_id,
+          task.title,
+          task.status,
+          task.manager,
+        );
+        newTasks.push(newTask);
+      } catch (error) {
+        // TODO: parse error
+        const parsedError = this._parseError(error);
+        const failedTask: FailTask = {
+          task,
+          error: parsedError,
+        };
+        failedTasks.push(failedTask);
+        continue;
+      }
     }
-    return newTasks;
+    const results: ImportResults = {
+      total,
+      success: newTasks,
+      fails: failedTasks,
+    };
+    return results;
   }
 
   /* These Methods can be directly called by controllers. */
@@ -95,7 +142,11 @@ export class TaskService {
       status,
       manager,
     });
-    await this.taskRepository.save(newTask);
+    try {
+      await this.taskRepository.save(newTask);
+    } catch (error) {
+      throw error;
+    }
     return newTask;
   }
 
@@ -115,10 +166,10 @@ export class TaskService {
     return task;
   }
 
-  async importTasks(file: Express.Multer.File): Promise<Task[]> {
+  async importTasks(file: Express.Multer.File): Promise<ImportResults> {
     const data = convertExcelToJSON(file);
     const tasks = await this._convertJsonToTask(data);
-    const newTasks = await this._createTasks(tasks);
-    return newTasks;
+    const importResult = await this._createTasks(tasks);
+    return importResult;
   }
 }
