@@ -27,7 +27,6 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
     "bcrypt": "^5.1.0",
-    "csv-parse": "^5.3.10",
     "dotenv": "^16.0.3",
     "mysql2": "^3.2.4",
     "passport": "^0.6.0",
