@@ -3,13 +3,51 @@ import { Task, TaskStatus } from './task.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { NewTaskDTO } from './dto/new-task.dto';
+import { convertExcelToJSON } from 'src/helpers/excel';
+import { JsonTaskDTO } from './dto/json-task.dto';
+import { UserService } from 'src/user/user.service';
 
 @Injectable()
 export class TaskService {
   constructor(
     @InjectRepository(Task)
     private readonly taskRepository: Repository<Task>,
+    private readonly userService: UserService,
   ) {}
+
+  /* Utilities */
+  async _convertJsonToTask(data: JsonTaskDTO[]): Promise<NewTaskDTO[]> {
+    const tasks: NewTaskDTO[] = [];
+    for (const entry of data) {
+      // TODO: map the users to user_id?
+      const user = await this.userService._getUserByFirstName(entry.assignee);
+      const userId = user?.id || 1;
+      const task: NewTaskDTO = {
+        full_id: entry.id,
+        user_id: userId,
+        title: entry.title || '',
+        status: entry.status.toLowerCase() as TaskStatus,
+        manager: entry.manager,
+      };
+      tasks.push(task);
+    }
+    return tasks;
+  }
+
+  async _createTasks(tasks: NewTaskDTO[]): Promise<Task[]> {
+    const newTasks: Task[] = [];
+    for (const task of tasks) {
+      const newTask = await this.createTask(
+        task.full_id,
+        task.user_id,
+        task.title,
+        task.status,
+        task.manager,
+      );
+      newTasks.push(newTask);
+    }
+    return newTasks;
+  }
 
   /* These Methods can be directly called by controllers. */
   async getTasks(): Promise<Task[] | null> {
@@ -75,5 +113,12 @@ export class TaskService {
     const task = await this.taskRepository.findOne({ where: { id } });
     await this.taskRepository.delete(id);
     return task;
+  }
+
+  async importTasks(file: Express.Multer.File): Promise<Task[]> {
+    const data = convertExcelToJSON(file);
+    const tasks = await this._convertJsonToTask(data);
+    const newTasks = await this._createTasks(tasks);
+    return newTasks;
   }
 }

@@ -1,5 +1,4 @@
 import {
-  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -23,10 +22,6 @@ import { Task } from './task.entity';
 import { NewTaskDTO } from './dto/new-task.dto';
 import { TaskOwnerGuard } from './guards/taskOwner.guard';
 import { FileInterceptor } from '@nestjs/platform-express';
-
-import * as fs from 'fs';
-import * as path from 'path';
-import * as XLSX from 'xlsx';
 
 @Controller('tasks')
 export class TaskController {
@@ -63,31 +58,14 @@ export class TaskController {
     return await this.taskService.deleteTask(id);
   }
 
+  // @UseGuards(JwtGuard, RolesGuard, TaskOwnerGuard)
   @Post('import')
+  // @Roles(UserRole.ADMIN, UserRole.SUPERADMIN)
   @UseInterceptors(FileInterceptor('file'))
-  async importTasks(@UploadedFile() file: Express.Multer.File) {
-    if (
-      ![
-        'application/vnd.ms-excel',
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      ].includes(file.mimetype)
-    ) {
-      throw new BadRequestException('Invalid file type');
-    }
-    const tempDir = path.join(__dirname, '..', 'temp');
-    if (!fs.existsSync(tempDir)) {
-      fs.mkdirSync(tempDir);
-    }
-    const filePath = path.join(tempDir, file.originalname);
-    fs.writeFileSync(filePath, file.buffer);
-
-    const workbook = XLSX.readFile(filePath);
-    const worksheetName = 'Tasks';
-    const worksheet = workbook.Sheets[worksheetName];
-    const data = XLSX.utils.sheet_to_json(worksheet);
-
-    const outputFilePath = path.join(__dirname, '..', 'temp', 'output.json');
-    fs.writeFileSync(outputFilePath, JSON.stringify(data));
+  async importTasks(
+    @UploadedFile() file: Express.Multer.File,
+  ): Promise<Task[]> {
+    return await this.taskService.importTasks(file);
   }
 
   @UseGuards(JwtGuard, RolesGuard)

@@ -45,6 +45,11 @@ export class UserService {
     return user;
   }
 
+  async _getUserByFirstName(first_name: string): Promise<User> {
+    const user = await this.usersRepository.findOne({ where: { first_name } });
+    return user;
+  }
+
   async _create(
     first_name: string,
     last_name: string,
