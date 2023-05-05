@@ -58,9 +58,9 @@ export class TaskController {
     return await this.taskService.deleteTask(id);
   }
 
-  // @UseGuards(JwtGuard, RolesGuard, TaskOwnerGuard)
+  @UseGuards(JwtGuard, RolesGuard)
   @Post('import')
-  // @Roles(UserRole.ADMIN, UserRole.SUPERADMIN)
+  @Roles(UserRole.ADMIN, UserRole.SUPERADMIN)
   @UseInterceptors(FileInterceptor('file'))
   async importTasks(
     @UploadedFile() file: Express.Multer.File,
