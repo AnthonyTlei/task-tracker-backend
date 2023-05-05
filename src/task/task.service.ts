@@ -9,7 +9,9 @@ import { UserService } from 'src/user/user.service';
 import {
   ErrorType,
   FailTask,
+  ImportConversionOptions,
   ImportError,
+  ImportOptions,
   ImportResults,
 } from './dto/import-result.dto';
 
@@ -45,6 +47,14 @@ export class TaskService {
     return parsedError;
   }
 
+  _cleanData = (
+    data: any,
+    options?: ImportConversionOptions,
+  ): JsonTaskDTO[] => {
+    const jsonTaskDTOArray = data.map((item) => new JsonTaskDTO(item, options));
+    return jsonTaskDTOArray;
+  };
+
   async _convertJsonToTask(data: JsonTaskDTO[]): Promise<NewTaskDTO[]> {
     const tasks: NewTaskDTO[] = [];
     for (const entry of data) {
@@ -53,7 +63,7 @@ export class TaskService {
       const task: NewTaskDTO = {
         full_id: entry.id,
         user_id: userId,
-        title: entry.title || '',
+        title: entry.title,
         status:
           (entry.status?.toLowerCase() as TaskStatus) || TaskStatus.UNKNOWN,
         manager: entry.manager,
@@ -78,7 +88,6 @@ export class TaskService {
         );
         newTasks.push(newTask);
       } catch (error) {
-        // TODO: parse error
         const parsedError = this._parseError(error);
         const failedTask: FailTask = {
           task,
@@ -166,9 +175,24 @@ export class TaskService {
     return task;
   }
 
-  async importTasks(file: Express.Multer.File): Promise<ImportResults> {
+  async deleteAllTasks(): Promise<void> {
+    // TODO: check if there's a better way to do this
+    const tasks = await this.taskRepository.find();
+    for (const task of tasks) {
+      await this.taskRepository.delete({ id: task.id });
+    }
+  }
+
+  async importTasks(
+    file: Express.Multer.File,
+    options?: ImportOptions,
+  ): Promise<ImportResults> {
     const data = convertExcelToJSON(file);
-    const tasks = await this._convertJsonToTask(data);
+    const cleanedData = this._cleanData(
+      data,
+      options as ImportConversionOptions,
+    );
+    const tasks = await this._convertJsonToTask(cleanedData);
     const importResult = await this._createTasks(tasks);
     return importResult;
   }

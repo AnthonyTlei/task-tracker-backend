@@ -17,6 +17,18 @@ export interface FailTask {
   error: ImportError;
 }
 
+export interface ImportConversionOptions {
+  idColName: string;
+  titleColName: string;
+  managerColName: string;
+  assigneeColName: string;
+  statusColName: string;
+}
+
+export interface ImportOptions extends ImportConversionOptions {
+  handleErrors?: boolean;
+}
+
 export interface ImportResults {
   total: number;
   success: Task[];

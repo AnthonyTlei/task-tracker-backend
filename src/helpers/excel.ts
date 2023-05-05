@@ -1,5 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import {
+  ImportConversionOptions,
+  ImportOptions,
+} from 'src/task/dto/import-result.dto';
 import { JsonTaskDTO } from 'src/task/dto/json-task.dto';
 import * as XLSX from 'xlsx';
 
@@ -15,13 +19,9 @@ function isValidExcelFile(file: Express.Multer.File) {
   return true;
 }
 
-export interface convertExcelToJSONOptions {
-  worksheetName: string;
-}
-
 export function convertExcelToJSON(
   file: Express.Multer.File,
-  options?: convertExcelToJSONOptions,
+  options?: ImportOptions,
 ): JsonTaskDTO[] {
   if (!isValidExcelFile(file)) {
     throw new Error('Invalid Excel File');
@@ -34,10 +34,9 @@ export function convertExcelToJSON(
   fs.writeFileSync(filePath, file.buffer);
 
   const workbook = XLSX.readFile(filePath);
-  const worksheetName = options?.worksheetName || 'Tasks';
+  // TODO: make this an option
+  const worksheetName = 'Tasks';
   const worksheet = workbook.Sheets[worksheetName];
   const data: JsonTaskDTO[] = XLSX.utils.sheet_to_json(worksheet);
   return data;
-  //   const outputFilePath = path.join(__dirname, '..', 'temp', 'output.json');
-  //   fs.writeFileSync(outputFilePath, JSON.stringify(data));
 }
