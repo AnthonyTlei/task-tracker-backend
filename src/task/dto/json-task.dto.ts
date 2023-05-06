@@ -2,7 +2,6 @@ import { TaskStatus } from '../task.entity';
 import { ImportConversionOptions } from './import-result.dto';
 
 export class JsonTaskDTO {
-  // TODO: handle cases where options is partial or null
   constructor(data: any, options?: ImportConversionOptions) {
     this.id = options.idColName ? data[options.idColName] : data.id;
     this.assignee = options.assigneeColName

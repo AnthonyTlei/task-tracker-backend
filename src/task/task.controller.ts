@@ -23,6 +23,7 @@ import { NewTaskDTO } from './dto/new-task.dto';
 import { TaskOwnerGuard } from './guards/taskOwner.guard';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ImportOptions, ImportResults } from './dto/import-result.dto';
+import { Request } from 'express';
 
 @Controller('tasks')
 export class TaskController {
@@ -72,8 +73,11 @@ export class TaskController {
   @UseInterceptors(FileInterceptor('file'))
   async importTasks(
     @UploadedFile() file: Express.Multer.File,
-    @Body() options?: ImportOptions,
+    @Req() request: Request,
   ): Promise<ImportResults> {
+    const options: ImportOptions = request.body.options
+      ? JSON.parse(request.body.options)
+      : undefined;
     return await this.taskService.importTasks(file, options);
   }
 
