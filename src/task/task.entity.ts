@@ -29,7 +29,7 @@ export class Task {
   @ManyToOne(() => User, (user) => user.id)
   user_id: number;
 
-  @Column()
+  @Column({ default: '' })
   title: string;
 
   @Column()
