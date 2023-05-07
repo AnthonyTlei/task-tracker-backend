@@ -51,8 +51,15 @@ export class TaskService {
     data: any,
     options?: ImportConversionOptions,
   ): JsonTaskDTO[] => {
-    const jsonTaskDTOArray = data.map((item) => new JsonTaskDTO(item, options));
-    return jsonTaskDTOArray;
+    try {
+      const jsonTaskDTOArray = data.map(
+        (item) => new JsonTaskDTO(item, options),
+      );
+      return jsonTaskDTOArray;
+    } catch (error) {
+      console.log(error);
+    }
+    return [];
   };
 
   async _convertJsonToTask(data: JsonTaskDTO[]): Promise<NewTaskDTO[]> {

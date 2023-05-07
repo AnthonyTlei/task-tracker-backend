@@ -12,9 +12,8 @@ export class JsonTaskDTO {
       ? data[options.managerColName]
       : data.manager;
     const statusValue = options.statusColName
-      ? data[options.statusColName]
-      : data.status;
-
+      ? data[options.statusColName]?.toLowerCase()
+      : data.status?.toLowerCase();
     this.status = Object.values(TaskStatus).includes(statusValue)
       ? (statusValue as TaskStatus)
       : TaskStatus.UNKNOWN;
