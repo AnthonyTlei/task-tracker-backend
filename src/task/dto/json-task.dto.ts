@@ -11,9 +11,13 @@ export class JsonTaskDTO {
     this.manager = options.managerColName
       ? data[options.managerColName]
       : data.manager;
-    this.status = options.statusColName
-      ? (data[options.statusColName] as TaskStatus)
-      : (data.status as TaskStatus);
+    const statusValue = options.statusColName
+      ? data[options.statusColName]
+      : data.status;
+
+    this.status = Object.values(TaskStatus).includes(statusValue)
+      ? (statusValue as TaskStatus)
+      : TaskStatus.UNKNOWN;
   }
   id: string;
   assignee: string;
