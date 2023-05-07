@@ -57,7 +57,7 @@ export class TaskService {
 
         if (task.status === 'unknown') {
           console.log('Old status before conversion to unknown:', item.status);
-          // TODO: return this as an error object in the TasksImportResult (not an error, this is a new property that needs to be added to the DTO)
+          // TODO: figure out a way to return this to the user
         }
 
         return task;
