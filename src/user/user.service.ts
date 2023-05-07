@@ -74,6 +74,11 @@ export class UserService {
     return usersDetails;
   }
 
+  async getUserNames(): Promise<string[]> {
+    const users = await this.usersRepository.find({ select: ['first_name'] });
+    return users.map((user) => user.first_name);
+  }
+
   async getUserDetailsByEmail(email: string): Promise<UserDetails | null> {
     const user = await this.usersRepository.findOne({ where: { email } });
     const userDetails = this._convertUserToUserDetails(user);

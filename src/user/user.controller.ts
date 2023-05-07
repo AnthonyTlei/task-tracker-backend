@@ -41,6 +41,13 @@ export class UserController {
   }
 
   @UseGuards(JwtGuard, RolesGuard)
+  @Get('names')
+  @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
+  async getUsersNames(): Promise<string[]> {
+    return await this.userService.getUserNames();
+  }
+
+  @UseGuards(JwtGuard, RolesGuard)
   @Get(':id')
   @Roles(UserRole.ADMIN, UserRole.SUPERADMIN)
   async getUser(@Param('id') id: number): Promise<UserDetails> {
