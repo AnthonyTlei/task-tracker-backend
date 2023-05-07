@@ -52,9 +52,17 @@ export class TaskService {
     options?: ImportConversionOptions,
   ): JsonTaskDTO[] => {
     try {
-      const jsonTaskDTOArray = data.map(
-        (item) => new JsonTaskDTO(item, options),
-      );
+      const jsonTaskDTOArray = data.map((item) => {
+        const task = new JsonTaskDTO(item, options);
+
+        if (task.status === 'unknown') {
+          console.log('Old status before conversion to unknown:', item.status);
+          // TODO: return this as an error object in the TasksImportResult (not an error, this is a new property that needs to be added to the DTO)
+        }
+
+        return task;
+      });
+
       return jsonTaskDTOArray;
     } catch (error) {
       console.log(error);
