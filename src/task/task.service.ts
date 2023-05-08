@@ -2,7 +2,12 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Task, TaskStatus } from './task.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { NewTaskDTO } from './dto/new-task.dto';
+import {
+  NewTaskDTO,
+  TaskWithWarning,
+  Warning,
+  WarningType,
+} from './dto/new-task.dto';
 import { convertExcelToJSON } from 'src/helpers/excel';
 import { JsonTaskDTO } from './dto/json-task.dto';
 import { UserService } from 'src/user/user.service';
@@ -55,9 +60,13 @@ export class TaskService {
       const jsonTaskDTOArray = data.map((item) => {
         const task = new JsonTaskDTO(item, options);
 
+        // TODO: refactor into _check_for_warnings
         if (task.status === 'unknown') {
-          console.log('Old status before conversion to unknown:', item.status);
-          // TODO: figure out a way to return this to the user
+          const warning: Warning = {
+            code: WarningType.INVALID_STATUS,
+            message: 'Invalid status: ' + item.status,
+          };
+          task.warning = warning;
         }
 
         return task;
@@ -65,9 +74,8 @@ export class TaskService {
 
       return jsonTaskDTOArray;
     } catch (error) {
-      console.log(error);
+      throw error;
     }
-    return [];
   };
 
   async _convertJsonToTask(data: JsonTaskDTO[]): Promise<NewTaskDTO[]> {
@@ -82,6 +90,7 @@ export class TaskService {
         status:
           (entry.status?.toLowerCase() as TaskStatus) || TaskStatus.UNKNOWN,
         manager: entry.manager,
+        warning: entry.warning ? entry.warning : undefined,
       };
       tasks.push(task);
     }
@@ -89,33 +98,43 @@ export class TaskService {
   }
 
   async _createTasks(tasks: NewTaskDTO[]): Promise<ImportResults> {
-    const newTasks: Task[] = [];
-    const failedTasks: FailTask[] = [];
-    const total = tasks.length;
-    for (const task of tasks) {
+    const success: Task[] = [];
+    const warnings: TaskWithWarning[] = [];
+    const fails: FailTask[] = [];
+    for (const taskDTO of tasks) {
       try {
+        // TODO: figure out why i cant pass taskDTO directly to createTask
         const newTask = await this.createTask(
-          task.full_id,
-          task.user_id,
-          task.title,
-          task.status,
-          task.manager,
+          taskDTO.full_id,
+          taskDTO.user_id,
+          taskDTO.title,
+          taskDTO.status,
+          taskDTO.manager,
         );
-        newTasks.push(newTask);
+        if (taskDTO.warning) {
+          const warningTask: TaskWithWarning = {
+            task: taskDTO,
+            warning: taskDTO.warning,
+          };
+          warnings.push(warningTask);
+        } else {
+          success.push(newTask);
+        }
       } catch (error) {
         const parsedError = this._parseError(error);
         const failedTask: FailTask = {
-          task,
+          task: taskDTO,
           error: parsedError,
         };
-        failedTasks.push(failedTask);
+        fails.push(failedTask);
         continue;
       }
     }
     const results: ImportResults = {
-      total,
-      success: newTasks,
-      fails: failedTasks,
+      total: tasks.length,
+      success,
+      warnings,
+      fails,
     };
     return results;
   }

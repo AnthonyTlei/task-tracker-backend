@@ -1,5 +1,6 @@
 import { TaskStatus } from '../task.entity';
 import { ImportConversionOptions } from './import-result.dto';
+import { Warning } from './new-task.dto';
 
 export class JsonTaskDTO {
   constructor(data: any, options?: ImportConversionOptions) {
@@ -23,4 +24,5 @@ export class JsonTaskDTO {
   title: string;
   status: string;
   manager: string;
+  warning?: Warning;
 }

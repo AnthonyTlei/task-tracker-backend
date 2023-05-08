@@ -1,5 +1,5 @@
 import { Task } from '../task.entity';
-import { NewTaskDTO } from './new-task.dto';
+import { NewTaskDTO, TaskWithWarning } from './new-task.dto';
 
 export enum ErrorType {
   DUPLICATE = 'DUPLICATE',
@@ -12,6 +12,7 @@ export interface ImportError {
   message: string;
 }
 
+// TODO: refactor into TaskWithError same as warning.
 export interface FailTask {
   task: NewTaskDTO;
   error: ImportError;
@@ -33,5 +34,6 @@ export interface ImportOptions extends ImportConversionOptions {
 export interface ImportResults {
   total: number;
   success: Task[];
+  warnings: TaskWithWarning[];
   fails: FailTask[];
 }
