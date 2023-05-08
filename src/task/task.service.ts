@@ -131,7 +131,6 @@ export class TaskService {
       }
     }
     const results: ImportResults = {
-      total: tasks.length,
       success,
       warnings,
       fails,

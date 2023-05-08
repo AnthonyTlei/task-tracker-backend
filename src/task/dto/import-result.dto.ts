@@ -15,7 +15,6 @@ export interface ImportOptions extends ImportConversionOptions {
 }
 
 export interface ImportResults {
-  total: number;
   success: Task[];
   warnings: TaskWithWarning[];
   fails: TaskWithError[];
