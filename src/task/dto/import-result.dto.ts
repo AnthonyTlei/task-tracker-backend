@@ -1,22 +1,5 @@
 import { Task } from '../task.entity';
-import { NewTaskDTO, TaskWithWarning } from './new-task.dto';
-
-export enum ErrorType {
-  DUPLICATE = 'DUPLICATE',
-  INVALID = 'INVALID',
-  UNKNOWN = 'UNKNOWN',
-}
-
-export interface ImportError {
-  type: ErrorType;
-  message: string;
-}
-
-// TODO: refactor into TaskWithError same as warning.
-export interface FailTask {
-  task: NewTaskDTO;
-  error: ImportError;
-}
+import { TaskWithError, TaskWithWarning } from './new-task.dto';
 
 export interface ImportConversionOptions {
   idColName?: string;
@@ -35,5 +18,5 @@ export interface ImportResults {
   total: number;
   success: Task[];
   warnings: TaskWithWarning[];
-  fails: FailTask[];
+  fails: TaskWithError[];
 }

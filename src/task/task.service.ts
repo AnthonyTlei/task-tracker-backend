@@ -3,19 +3,19 @@ import { Task, TaskStatus } from './task.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import {
+  Error,
+  ErrorCode,
   NewTaskDTO,
+  TaskWithError,
   TaskWithWarning,
   Warning,
-  WarningType,
+  WarningCode,
 } from './dto/new-task.dto';
 import { convertExcelToJSON } from 'src/helpers/excel';
 import { JsonTaskDTO } from './dto/json-task.dto';
 import { UserService } from 'src/user/user.service';
 import {
-  ErrorType,
-  FailTask,
   ImportConversionOptions,
-  ImportError,
   ImportOptions,
   ImportResults,
 } from './dto/import-result.dto';
@@ -30,23 +30,23 @@ export class TaskService {
 
   /* Utilities */
 
-  _parseError(error: any): ImportError {
+  _parseError(error: any): Error {
     const errorString = JSON.stringify(error);
     const jsonError = JSON.parse(errorString);
-    let errorCode = ErrorType.UNKNOWN;
+    let errorCode = ErrorCode.UNKNOWN;
     let message = 'Unknown Error';
     switch (jsonError.driverError.code) {
       case 'ER_DUP_ENTRY':
-        errorCode = ErrorType.DUPLICATE;
+        errorCode = ErrorCode.DUPLICATE;
         message =
           'Duplicate Entry for task with id: ' + jsonError.parameters[0];
         break;
       default:
-        errorCode = ErrorType.UNKNOWN;
+        errorCode = ErrorCode.UNKNOWN;
         break;
     }
-    const parsedError: ImportError = {
-      type: errorCode,
+    const parsedError: Error = {
+      code: errorCode,
       message,
     };
     return parsedError;
@@ -63,7 +63,7 @@ export class TaskService {
         // TODO: refactor into _check_for_warnings
         if (task.status === 'unknown') {
           const warning: Warning = {
-            code: WarningType.INVALID_STATUS,
+            code: WarningCode.INVALID_STATUS,
             message: 'Invalid status: ' + item.status,
           };
           task.warning = warning;
@@ -100,7 +100,7 @@ export class TaskService {
   async _createTasks(tasks: NewTaskDTO[]): Promise<ImportResults> {
     const success: Task[] = [];
     const warnings: TaskWithWarning[] = [];
-    const fails: FailTask[] = [];
+    const fails: TaskWithError[] = [];
     for (const taskDTO of tasks) {
       try {
         // TODO: figure out why i cant pass taskDTO directly to createTask
@@ -122,7 +122,7 @@ export class TaskService {
         }
       } catch (error) {
         const parsedError = this._parseError(error);
-        const failedTask: FailTask = {
+        const failedTask: TaskWithError = {
           task: taskDTO,
           error: parsedError,
         };
