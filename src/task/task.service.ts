@@ -111,6 +111,7 @@ export class TaskService {
           taskDTO.status,
           taskDTO.manager,
         );
+        // TODO: ??? why is warning set twice. Was i drunk?
         if (taskDTO.warning) {
           const warningTask: TaskWithWarning = {
             task: taskDTO,
