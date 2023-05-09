@@ -112,6 +112,7 @@ export class TaskService {
           taskDTO.manager,
         );
         // TODO: ??? why is warning set twice. Was i drunk?
+        // TODO: decide on whether NewTaskDTO must have warnings, does creating/editing a task need warnings? If so remove TaskWithWarning and just return a newTaskDTO[] 
         if (taskDTO.warning) {
           const warningTask: TaskWithWarning = {
             task: taskDTO,
