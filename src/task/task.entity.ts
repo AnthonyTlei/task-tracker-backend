@@ -38,6 +38,12 @@ export class Task {
   @Column()
   manager: string;
 
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  date_assigned: Date;
+
+  @Column({ type: 'timestamp', nullable: true })
+  date_completed?: Date;
+
   @ManyToOne(() => User, (user) => user.tasks)
   @JoinColumn({ name: 'user_id' })
   user: User;
