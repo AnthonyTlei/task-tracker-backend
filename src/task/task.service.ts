@@ -7,7 +7,6 @@ import {
   ErrorCode,
   NewTaskDTO,
   TaskWithError,
-  TaskWithWarning,
   Warning,
   WarningCode,
 } from './dto/new-task.dto';
@@ -99,7 +98,7 @@ export class TaskService {
 
   async _createTasks(tasks: NewTaskDTO[]): Promise<ImportResults> {
     const success: Task[] = [];
-    const warnings: TaskWithWarning[] = [];
+    const warnings: NewTaskDTO[] = [];
     const fails: TaskWithError[] = [];
     for (const taskDTO of tasks) {
       try {
@@ -114,11 +113,7 @@ export class TaskService {
         // TODO: ??? why is warning set twice. Was i drunk?
         // TODO: decide on whether NewTaskDTO must have warnings, does creating/editing a task need warnings? If so remove TaskWithWarning and just return a newTaskDTO[] 
         if (taskDTO.warning) {
-          const warningTask: TaskWithWarning = {
-            task: taskDTO,
-            warning: taskDTO.warning,
-          };
-          warnings.push(warningTask);
+          warnings.push(taskDTO);
         } else {
           success.push(newTask);
         }

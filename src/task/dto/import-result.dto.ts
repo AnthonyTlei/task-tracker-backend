@@ -1,5 +1,5 @@
 import { Task } from '../task.entity';
-import { TaskWithError, TaskWithWarning } from './new-task.dto';
+import { NewTaskDTO, TaskWithError } from './new-task.dto';
 
 export interface ImportConversionOptions {
   idColName?: string;
@@ -16,6 +16,6 @@ export interface ImportOptions extends ImportConversionOptions {
 
 export interface ImportResults {
   success: Task[];
-  warnings: TaskWithWarning[];
+  warnings: NewTaskDTO[];
   fails: TaskWithError[];
 }

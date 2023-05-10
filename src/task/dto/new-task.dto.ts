@@ -20,11 +20,6 @@ export interface Error {
   message: string;
 }
 
-export interface TaskWithWarning {
-  task: NewTaskDTO;
-  warning: Warning;
-}
-
 export interface TaskWithError {
   task: NewTaskDTO;
   error: Error;
