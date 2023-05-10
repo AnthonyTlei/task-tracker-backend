@@ -1,4 +1,4 @@
-import { TaskStatus } from '../task.entity';
+import { Task, TaskStatus } from '../task.entity';
 
 export enum WarningCode {
   INVALID_STATUS = 'INVALID_STATUS',
@@ -23,6 +23,11 @@ export interface Error {
 export interface TaskWithError {
   task: NewTaskDTO;
   error: Error;
+}
+
+export interface TaskWithWarning {
+  task: Task;
+  warning: Warning;
 }
 
 export class NewTaskDTO {
