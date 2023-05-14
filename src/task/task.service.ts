@@ -176,6 +176,8 @@ export class TaskService {
     title: string,
     status: TaskStatus,
     manager: string,
+    date_assigned?: Date,
+    date_completed?: Date,
   ): Promise<Task> {
     const newTask = this.taskRepository.create({
       full_id,
@@ -183,6 +185,8 @@ export class TaskService {
       title,
       status,
       manager,
+      date_assigned,
+      date_completed,
     });
     try {
       await this.taskRepository.save(newTask);

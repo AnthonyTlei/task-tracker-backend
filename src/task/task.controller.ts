@@ -97,6 +97,8 @@ export class TaskController {
       task.title,
       task.status,
       task.manager,
+      task.date_assigned,
+      task.date_completed,
     );
   }
 }
