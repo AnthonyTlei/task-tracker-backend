@@ -10,6 +10,16 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.useGlobalFilters(new AllExceptionsFilter());
   app.enableCors();
+  // Middleware to exclude /.well-known/ files from the global prefix
+  app.use((req, res, next) => {
+    if (req.url === '/.well-known/ai-plugin.json') {
+      req.url = '/api/.well-known/ai-plugin.json';
+    }
+    if (req.url === '/.well-known/openapi.yaml') {
+      req.url = '/api/.well-known/openapi.yaml';
+    }
+    next();
+  });
   await app.listen(3000);
 }
 bootstrap();

@@ -1,0 +1,25 @@
+openapi: 3.0.1
+info:
+  title: TODO Plugin
+  description: A plugin that allows the user to create and manage a TODO list using ChatGPT.
+  version: 'v1'
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/test/ping:
+    get:
+      operationId: ping
+      summary: Ping the server
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getPingResponse'
+components:
+  schemas:
+    getPingResponse:
+      type: string
+      description: pong
+      
