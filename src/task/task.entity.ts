@@ -38,8 +38,8 @@ export class Task {
   @Column()
   manager: string;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  date_assigned: Date;
+  @Column({ type: 'timestamp', nullable: true })
+  date_assigned?: Date;
 
   @Column({ type: 'timestamp', nullable: true })
   date_completed?: Date;

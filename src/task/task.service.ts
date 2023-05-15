@@ -59,7 +59,6 @@ export class TaskService {
     try {
       const jsonTaskDTOArray = data.map((item) => {
         const task = new JsonTaskDTO(item, options);
-
         // TODO: refactor into _check_for_warnings
         if (task.status === 'unknown') {
           const warning: Warning = {
@@ -90,6 +89,8 @@ export class TaskService {
         status:
           (entry.status?.toLowerCase() as TaskStatus) || TaskStatus.UNKNOWN,
         manager: entry.manager,
+        date_assigned: entry.date_assigned ? entry.date_assigned : undefined,
+        date_completed: entry.date_completed ? entry.date_completed : undefined,
         warning: entry.warning ? entry.warning : undefined,
       };
       tasks.push(task);
@@ -110,6 +111,8 @@ export class TaskService {
           taskDTO.title,
           taskDTO.status,
           taskDTO.manager,
+          taskDTO.date_assigned,
+          taskDTO.date_completed,
         );
         if (taskDTO.warning) {
           const taskWithWarning: TaskWithWarning = {

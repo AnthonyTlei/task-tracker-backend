@@ -7,6 +7,8 @@ export interface ImportConversionOptions {
   managerColName?: string;
   assigneeColName?: string;
   statusColName?: string;
+  dateAssignedColName?: string;
+  dateCompletedColName?: string;
 }
 
 export interface ImportOptions extends ImportConversionOptions {

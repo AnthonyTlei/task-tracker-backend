@@ -19,6 +19,14 @@ function isValidExcelFile(file: Express.Multer.File) {
   return true;
 }
 
+export function excelDateToJSDate(serial: number) {
+  const tempDate = new Date(1899, 11, 31);
+  const date = new Date(
+    tempDate.getTime() + (serial - 1) * 24 * 60 * 60 * 1000,
+  );
+  return date;
+}
+
 export function convertExcelToJSON(
   file: Express.Multer.File,
   options?: ImportOptions,

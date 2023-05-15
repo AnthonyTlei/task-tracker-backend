@@ -36,7 +36,7 @@ export class NewTaskDTO {
   title: string;
   status: TaskStatus;
   manager: string;
-  warning?: Warning;
   date_assigned?: Date;
   date_completed?: Date;
+  warning?: Warning;
 }

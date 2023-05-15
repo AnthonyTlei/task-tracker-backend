@@ -1,3 +1,4 @@
+import { excelDateToJSDate } from 'src/helpers/excel';
 import { TaskStatus } from '../task.entity';
 import { ImportConversionOptions } from './import-result.dto';
 import { Warning } from './new-task.dto';
@@ -18,11 +19,19 @@ export class JsonTaskDTO {
     this.status = Object.values(TaskStatus).includes(statusValue)
       ? (statusValue as TaskStatus)
       : TaskStatus.UNKNOWN;
+    this.date_assigned = options.dateAssignedColName
+      ? excelDateToJSDate(data[options.dateAssignedColName])
+      : data.date_assigned;
+    this.date_completed = options.dateCompletedColName
+      ? excelDateToJSDate(data[options.dateCompletedColName])
+      : data.date_completed;
   }
   id: string;
   assignee: string;
   title: string;
   status: string;
   manager: string;
+  date_assigned?: Date;
+  date_completed?: Date;
   warning?: Warning;
 }
