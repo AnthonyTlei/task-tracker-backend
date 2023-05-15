@@ -19,6 +19,7 @@ import {
   ImportOptions,
   ImportResults,
 } from './dto/import-result.dto';
+import { GetTasksFilterDTO } from './dto/task-filter.dto';
 
 @Injectable()
 export class TaskService {
@@ -152,8 +153,8 @@ export class TaskService {
     return tasks;
   }
 
-  async getTasksWithUserDetails(): Promise<Task[]> {
-    const tasks = await this.taskRepository
+  async getTasksWithUserDetails(filters: GetTasksFilterDTO): Promise<Task[]> {
+    const query = this.taskRepository
       .createQueryBuilder('task')
       .leftJoinAndSelect('task.user', 'user')
       .select([
@@ -163,8 +164,17 @@ export class TaskService {
         'user.last_name',
         'user.email',
         'user.role',
-      ])
-      .getMany();
+      ]);
+
+    if (filters.range) {
+      const [startDate, endDate] = filters.range;
+      query.andWhere('task.date_assigned BETWEEN :startDate AND :endDate', {
+        startDate,
+        endDate,
+      });
+    }
+
+    const tasks = await query.getMany();
     return tasks;
   }
 

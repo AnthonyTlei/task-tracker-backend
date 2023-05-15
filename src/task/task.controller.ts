@@ -8,6 +8,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
   Req,
   UploadedFile,
   UseGuards,
@@ -24,6 +25,7 @@ import { TaskOwnerGuard } from './guards/taskOwner.guard';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ImportOptions, ImportResults } from './dto/import-result.dto';
 import { Request } from 'express';
+import { GetTasksFilterDTO } from './dto/task-filter.dto';
 
 @Controller('tasks')
 export class TaskController {
@@ -32,8 +34,8 @@ export class TaskController {
   @UseGuards(JwtGuard, RolesGuard)
   @Get()
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
-  async getTasks(): Promise<Task[]> {
-    return await this.taskService.getTasksWithUserDetails();
+  async getTasks(@Query() filters: GetTasksFilterDTO): Promise<Task[]> {
+    return await this.taskService.getTasksWithUserDetails(filters);
   }
 
   @UseGuards(JwtGuard, RolesGuard)
