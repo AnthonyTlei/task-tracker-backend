@@ -42,8 +42,9 @@ export function convertExcelToJSON(
   fs.writeFileSync(filePath, file.buffer);
 
   const workbook = XLSX.readFile(filePath);
-  // TODO: make this an option
-  const worksheetName = 'Tasks';
+  const worksheetName = options?.worksheetName
+    ? options.worksheetName
+    : 'Tasks';
   const worksheet = workbook.Sheets[worksheetName];
   const data: JsonTaskDTO[] = XLSX.utils.sheet_to_json(worksheet);
   return data;

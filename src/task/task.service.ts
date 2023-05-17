@@ -237,7 +237,7 @@ export class TaskService {
     file: Express.Multer.File,
     options?: ImportOptions,
   ): Promise<ImportResults> {
-    const data = convertExcelToJSON(file);
+    const data = convertExcelToJSON(file, options);
     const cleanedData = this._cleanData(
       data,
       options as ImportConversionOptions,
