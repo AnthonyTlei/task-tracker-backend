@@ -10,6 +10,7 @@ import {
   Put,
   Query,
   Req,
+  Res,
   UploadedFile,
   UseGuards,
   UseInterceptors,
@@ -24,7 +25,7 @@ import { NewTaskDTO } from './dto/new-task.dto';
 import { TaskOwnerGuard } from './guards/taskOwner.guard';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ImportOptions, ImportResults } from './dto/import-result.dto';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 import { GetTasksFilterDTO } from './dto/task-filter.dto';
 
 @Controller('tasks')
@@ -36,6 +37,14 @@ export class TaskController {
   @Roles(UserRole.USER, UserRole.ADMIN, UserRole.SUPERADMIN)
   async getTasks(@Query() filters: GetTasksFilterDTO): Promise<Task[]> {
     return await this.taskService.getTasksWithUserDetails(filters);
+  }
+
+  @UseGuards(JwtGuard, RolesGuard)
+  @Get('export')
+  @Roles(UserRole.ADMIN, UserRole.SUPERADMIN)
+  async exportTasks(@Res() res: Response): Promise<void> {
+    await this.taskService.exportTasks();
+    res.download('tasks.xlsx');
   }
 
   @UseGuards(JwtGuard, RolesGuard)

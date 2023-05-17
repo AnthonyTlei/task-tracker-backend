@@ -49,3 +49,10 @@ export function convertExcelToJSON(
   const data: JsonTaskDTO[] = XLSX.utils.sheet_to_json(worksheet);
   return data;
 }
+
+export function convertJSONToExcel(data: any) {
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, 'Tasks');
+  XLSX.writeFile(workbook, 'tasks.xlsx');
+}

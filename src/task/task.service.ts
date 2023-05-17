@@ -11,7 +11,7 @@ import {
   Warning,
   WarningCode,
 } from './dto/new-task.dto';
-import { convertExcelToJSON } from 'src/helpers/excel';
+import { convertExcelToJSON, convertJSONToExcel } from 'src/helpers/excel';
 import { JsonTaskDTO } from './dto/json-task.dto';
 import { UserService } from 'src/user/user.service';
 import {
@@ -245,5 +245,10 @@ export class TaskService {
     const tasks = await this._convertJsonToTask(cleanedData);
     const importResult = await this._createTasks(tasks);
     return importResult;
+  }
+
+  async exportTasks() {
+    const data = await this.getTasks();
+    convertJSONToExcel(data);
   }
 }
